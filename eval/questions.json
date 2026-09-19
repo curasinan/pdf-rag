@@ -1,0 +1,122 @@
+[
+  {
+    "id": "q01",
+    "question": "What are the main reasons coffee shops fail according to the materials?",
+    "expected_answer": "Failure to prepare, no business plan, lack of willingness to learn/adapt, no cohesive concept, poor lease preparation, overspending on equipment, underestimating cash flow, hiring wrong people, poor management, too much debt, overestimating sales, owner burnout. The materials emphasize coffee shops fail due to operational/financial/planning shortcomings, not because of the coffee.",
+    "must_cite_source": "Why Do Coffee Shops Fail"
+  },
+  {
+    "id": "q02",
+    "question": "What are the seven costs that sink coffee shops?",
+    "expected_answer": "The seven costs are: (1) Over-Scheduling Baristas (excess labor cost), (2) Avoidable Coffee Shop Waste (food/drink waste from rushes, wrong orders, improper storage), (3) Coffee Shop Inventory Management (perishable trash, tied-up cash, stockouts), (4) Employee Giveaways (free food/drinks to friends and family), (5) Marketing That Isn't Working (paid ads with no measurable impact), (6) Lack of Proper Equipment Maintenance (repair costs plus lost-sale downtime), and (7) The Cost of Time (owner time consumed by customer/vendor/employee issues).",
+    "must_cite_source": "7 Costs That Sink Coffee Shops"
+  },
+  {
+    "id": "q03",
+    "question": "What are five KPIs every coffee shop manager should track?",
+    "expected_answer": "The five KPIs are: (1) Employee Retention Rate, (2) RevPASH (Revenue Per Available Seat Hour, calculated as Total Revenue ÷ Seat Hours), (3) Labour Cost Percentage (also called Sales per Labour Hour), (4) Revenue per Employee (sales per head / average ticket size), and (5) a metric related to seating efficiency / how quickly patrons are seated (table turn).",
+    "must_cite_source": "5 KPIs Every Clever Café Manager Should Track"
+  },
+  {
+    "id": "q04",
+    "question": "List ways to run a more efficient coffee shop.",
+    "expected_answer": "Practices for running an efficient coffee shop, such as workflow optimization, equipment placement, staff training, inventory automation, scheduling software, menu simplification, and standardized procedures.",
+    "must_cite_source": "7 Ways To Run A More Efficient Coffee Shop"
+  },
+  {
+    "id": "q05",
+    "question": "How do you calculate the cost of selling 100 coffees?",
+    "expected_answer": "Sum the per-cup COGS components: espresso ($0.50/cup based on $12/lb wholesale coffee yielding ~25 double shots/lb at 18g/shot), cup and lid ($0.24/cup), and water (~$0.05/cup), giving ~$0.79 per Americano = $79 for 100 Americanos. For lattes, add milk cost (~$0.40/cup using 1 gal organic whole milk at ~$4.00 yielding 10 lattes), giving ~$1.14 per latte = $114 for 100 lattes. The document emphasizes this is COGS only — labor, rent, utilities and other operational costs must still be subtracted to get true profit.",
+    "must_cite_source": "How to Determine the Cost of Selling 100 Coffees"
+  },
+  {
+    "id": "q06",
+    "question": "How do you calculate a coffee shop's break-even point?",
+    "expected_answer": "Two methods are presented. (1) Simple formula: Break-Even Point = Fixed Costs / Gross Margin %, e.g. $22,000 fixed / 0.85 gross margin = $26,000 monthly sales needed to break even. (2) Detailed method: Sum startup costs and amortize over a payoff window, estimate monthly fixed costs (rent, insurance, loan, salary) and variable costs (labor, coffee, milk, supplies), then compute Sales Margin = Gross Sales Revenue − Variable Costs and Break-Even = Fixed Costs / Sales Margin. A worked example shows $7,200 fixed + $2,800 variable = $10,000/month total operating cost vs. ~$522/day projected revenue (12 transactions/hr × 10 hrs × $4.35 ticket).",
+    "must_cite_source": "Calculating Your Break Even Point"
+  },
+  {
+    "id": "q07",
+    "question": "What was the 2023 baseline annual revenue for Broadway Cafe?",
+    "expected_answer": "$720,000 in 2023 baseline revenue.",
+    "must_cite_source": "Broadway_Cafe_Financial_Model_Template S26"
+  },
+  {
+    "id": "q08",
+    "question": "What is the projected COGS percentage for Broadway Cafe in 2026?",
+    "expected_answer": "32.5% COGS as a percentage of sales in 2026.",
+    "must_cite_source": "Broadway_Cafe_Financial_Model_Template S26"
+  },
+  {
+    "id": "q09",
+    "question": "What is the total funding request in the Broadway Cafe financial model?",
+    "expected_answer": "$57,000 total funding request, spread across investment areas like POS upgrade, ERP/integration, loyalty/CRM, cybersecurity, training, data cleanup, and AI/forecasting.",
+    "must_cite_source": "Broadway_Cafe_Financial_Model_Template S26"
+  },
+  {
+    "id": "q10",
+    "question": "How can loyalty programs increase coffee shop profits?",
+    "expected_answer": "Loyalty programs increase profits by raising customer retention, increasing visit frequency, encouraging higher ticket sizes, providing customer data for personalization, and reducing customer acquisition cost.",
+    "must_cite_source": "How to Increase Your Coffee Shop Profits with Loyalty Programs"
+  },
+  {
+    "id": "q11",
+    "question": "How should a coffee shop promote and market itself?",
+    "expected_answer": "Marketing tactics for coffee shops including local SEO, social media presence, in-store events, loyalty programs, partnerships with local businesses, email marketing, and word-of-mouth referrals.",
+    "must_cite_source": "How to Promote and Market Your Coffee Shop"
+  },
+  {
+    "id": "q12",
+    "question": "How can a coffee shop revamp its menu to increase profits?",
+    "expected_answer": "Key tactics: start with POS data to identify what's selling, know your target market and align prices accordingly, avoid menus that are too long (overwhelming) or too short (limiting), remove high-cost / low-margin items, develop a deliberate pricing strategy that covers costs and target margin, gather direct customer feedback (samples, taste tests, surveys), train baristas to recommend, upsell, and report customer requests, market new menu items via signage and social media, continuously reanalyze sales data, use bundles / cross-selling, and offer something unique (signature drinks, seasonal items, dietary alternatives).",
+    "must_cite_source": "How to Revamp Your Coffee Shop Menu to Make More Profits"
+  },
+  {
+    "id": "q13",
+    "question": "How can a coffee shop beat its competition?",
+    "expected_answer": "Strategies for outcompeting other coffee shops: differentiation through unique concept, superior customer service, quality products, distinctive atmosphere, community engagement, loyalty programs, and operational efficiency.",
+    "must_cite_source": "How to Beat Your Coffee Shop Competition"
+  },
+  {
+    "id": "q14",
+    "question": "What metrics should a coffee shop franchise track to measure performance?",
+    "expected_answer": "Primary KPIs from PJ's Coffee: Cost of Goods (COGs), Labor Percentages (labor / sales), Top-Line Sales, and Loyalty System Participation. The PJ's piece also stresses using inventory-control management and employee labor-management tools to control COGs and labor margins.",
+    "must_cite_source": "Top Metrics to Track to Measure Your Coffee Shop Franchise’s Performance"
+  },
+  {
+    "id": "q15",
+    "question": "How can a coffee shop use customer data to understand its customers?",
+    "expected_answer": "Use POS data, loyalty program data, surveys, and observation to identify customer demographics, preferences, peak times, and buying patterns, then act on those insights.",
+    "must_cite_source": "How To Understand Your Customers And Their Needs With The Right Data"
+  },
+  {
+    "id": "q16",
+    "question": "What is When I Work software used for?",
+    "expected_answer": "When I Work is employee scheduling and time-tracking software used to build and share schedules, track hours, manage time-off requests, and communicate with staff.",
+    "must_cite_source": "When I Work Employee Scheduling and Time Tracking Software"
+  },
+  {
+    "id": "q17",
+    "question": "What is the high-level strategic roadmap for transforming a declining coffee shop?",
+    "expected_answer": "A staged roadmap covering diagnosis of decline, modernization investments (POS, loyalty, marketing), operational improvements, and growth phases.",
+    "must_cite_source": "High-Level Strategic Roadmap - Transforming a Declining Coffee Shop…"
+  },
+  {
+    "id": "q18",
+    "question": "What does the MIS 311 team accountability checklist cover?",
+    "expected_answer": "A checklist covering team norms, attendance, deliverables, peer evaluation, communication expectations, and accountability mechanisms for project teams.",
+    "must_cite_source": "🤝 MIS 311 Team Accountability Checklist"
+  },
+  {
+    "id": "q19",
+    "question": "What are the business plan assumptions for the Broadway Cafe project?",
+    "expected_answer": "Baseline assumptions including starting revenue, cost structure (COGS %, labor %), growth rates, modernization investments, and funding requirements provided in the project brief.",
+    "must_cite_source": "Business Plan Assumptions S26"
+  },
+  {
+    "id": "q20",
+    "question": "How will finalist team presentations be judged in the capstone?",
+    "expected_answer": "A 25-point rubric across five equally weighted categories (5 points each): (1) Innovation & Differentiation, (2) Business Logic & Feasibility, (3) Systems Thinking & Integration, (4) Synthesis of Prior Deliverables, (5) Professional Communication. Tiebreakers in order: Business Logic & Feasibility, then Systems Thinking & Integration, then Innovation & Differentiation. The top four finalist teams present their Business Plans to a judging panel and the highest total score wins.",
+    "must_cite_source": "Finalist Team Presentation Judging Rubric S26"
+  }
+]

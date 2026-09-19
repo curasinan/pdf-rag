@@ -1,0 +1,13 @@
+pymupdf>=1.24.0
+chromadb>=0.5.0
+sentence-transformers>=3.0.0
+rank-bm25>=0.2.2
+torch>=2.2.0
+python-docx>=1.1.0
+openpyxl>=3.1.0
+docling>=2.0.0
+easyocr>=1.7.0
+
+# Optional: only needed for PDFRAG_BRIDGE=sdk (metered API billing).
+# The default CLI backend needs nothing here.
+anthropic>=0.40

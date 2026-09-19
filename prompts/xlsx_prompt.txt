@@ -1,0 +1,35 @@
+Generate financial model assumption fills for the Broadway Café modernization plan based on the business plan below. Output JSON only — no preamble, no markdown, no code fences.
+
+BUSINESS PLAN:
+{{BUSINESS_PLAN}}
+
+XLSX TEMPLATE STRUCTURE (sheet → rows with cell coordinates and labels/formulas):
+{{XLSX_STRUCTURE}}
+
+YOUR TASK:
+Identify cells in the template that need numeric assumption values (revenue growth %, cost percentages, headcount, hours, prices) — typically cells in rows where column A or B contains a label like "Revenue Growth %" or "Labor %". Generate values that are JUSTIFIED by the operational improvements described in the business plan above. DO NOT overwrite formula cells (cells whose value starts with "=").
+
+OUTPUT SCHEMA (strict JSON, no code fences):
+{
+  "fills": [
+    {
+      "sheet": "Assumptions",
+      "cell": "B5",
+      "value": 0.08,
+      "justification": "8% mobile ordering revenue uplift Year 1, per Operations Plan (mobile order channel addition driving incremental commuter traffic)"
+    }
+  ]
+}
+
+GUIDELINES:
+- Only fill cells that look like assumptions (typical column A label is text describing what the cell represents). Skip cells whose existing value starts with "=" (those are formulas).
+- Values must tie to specific business plan claims. If the plan says "8% labor cost reduction via AI scheduling," that's the source for the labor cost assumption.
+- For percentages, use decimal form (0.08 for 8%, not "8%" or 8).
+- For dollar amounts, use plain numbers (no $ sign, no commas).
+- Cap output to 25 fills max. If unsure about a cell, skip it — partial fills are better than wrong fills.
+- Be conservative. Rubric values credible numbers over optimistic ones. Match the 10% annual decline pre-modernization (negative) and modest 5-12% modernization-driven growth post.
+- Pre-modernization (2023, 2024, 2025): apply -10% revenue decline.
+- Post-modernization (2026, 2027, 2028, 2029, 2030): apply 5-12% growth driven by named operational changes.
+- Cost categories: labor 26-30% of revenue post-AI-scheduling, COGS 28-32% post-AI-forecasting, marketing 4-6% of revenue, technology subscriptions 2-3% of revenue.
+
+Output the JSON object now. Start with `{` and end with `}`. No code fences. No preamble.

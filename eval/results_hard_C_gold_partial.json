@@ -1,0 +1,422 @@
+{
+  "run_id": "pilot1",
+  "subset": "all",
+  "arm": "C",
+  "arm_name": "C_agentic_files",
+  "arm_config_hash": "31097be6447b",
+  "judge_runs": 1,
+  "judge_evidence": "gold",
+  "results": [
+    {
+      "id": "h04",
+      "question": "Which page of the Calculating Your Break Even Point document contains the worked example with concrete numbers?",
+      "question_type": "page_lookup",
+      "holdout": false,
+      "must_cite_sources": [
+        {
+          "source": "Calculating Your Break Even Point",
+          "pages": [
+            2,
+            3
+          ]
+        }
+      ],
+      "retrieved": [],
+      "recall": {
+        "applicable": false,
+        "reason": "C_agentic_files does not rank"
+      },
+      "mrr_at_10": null,
+      "ndcg_at_10": null,
+      "verdict": "DIFFERENT",
+      "judge": {
+        "relevance": 2,
+        "groundedness": 2,
+        "citation_accuracy": 2,
+        "critical_errors": [
+          "HALLUCINATION"
+        ],
+        "short_rationale": "The candidate invents a page 4 (not present in the evidence, which only covers pages 1-4 as overlapping chunks labeled 'pages 1-3' and 'pages 2-4', with no distinct page-4-only content or an Americano/menu-item example), fabricating the break-even arithmetic location and a second worked example not ",
+        "flip_rate_relevance": 0.0,
+        "flip_rate_groundedness": 0.0,
+        "n_runs": 1,
+        "escalated": true,
+        "per_run": [
+          {
+            "relevance": 3,
+            "groundedness": 2,
+            "citation_accuracy": 2,
+            "critical_errors": [
+              "HALLUCINATION"
+            ],
+            "short_rationale": "The candidate invents a page 4 (not present in the evidence, which only covers pages 1-4 as overlapping chunks labeled 'pages 1-3' and 'pages 2-4', with no distinct page-4-only content or an Americano/menu-item example), fabricating the break-even arithmetic location and a second worked example not "
+          }
+        ]
+      },
+      "citation_validation": {
+        "n_citations": 3,
+        "n_source_valid": 3,
+        "n_page_valid": 3,
+        "source_accuracy": 1.0,
+        "page_accuracy": 1.0,
+        "per_citation": [
+          {
+            "source": "Calculating Your Break Even Point",
+            "pages": [
+              2
+            ],
+            "raw": "[Calculating Your Break Even Point, page 2]",
+            "source_exists": true,
+            "page_matches": true,
+            "valid": true
+          },
+          {
+            "source": "Calculating Your Break Even Point",
+            "pages": [
+              3
+            ],
+            "raw": "[Calculating Your Break Even Point, page 3]",
+            "source_exists": true,
+            "page_matches": true,
+            "valid": true
+          },
+          {
+            "source": "Calculating Your Break Even Point",
+            "pages": [
+              4
+            ],
+            "raw": "[Calculating Your Break Even Point, page 4]",
+            "source_exists": true,
+            "page_matches": true,
+            "valid": true
+          }
+        ]
+      },
+      "actual_answer": "The worked example runs across **pages 2–4**, not a single page, and the calculation itself lands on **page 4**.\n\n**How it breaks down:**\n\n- **Page 2** introduces the sample scenario with startup cost estimates — Legal and Administrative $300, Coffee Equipment $12,000, Remodeling and Buildout $4,500, Furniture and Fixtures $2,500, Other Costs $2,500, for Initial Total Startup Costs of $21,800, plus a $10,000 loan at a $350 monthly payment [Calculating Your Break Even Point, page 2].\n\n- **Page 3** supplies the operating numbers: fixed costs of Rent $2,000, Insurance $300, Loan & Interest $350, and Fixed Salary $4,200 — $7,200/month or $240/day; variable costs of Labor $1,200, Coffee $650, Milk $450, Baked goods $300, Other $200 — $2,800/month or $93.33/day; total operational costs of $10,000 and an average total daily cost of $333. It then works the revenue projection: $4.35 average receipt × 12 transactions/hour × 10 hours = $522 gross revenue per day, or $15,660 per month [Calculating Your Break Even Point, page 3].\n\n- **Page 4** is where the two halves are combined into the actual break-even arithmetic: $240 (fixed) + $93 (variable) = $333, then $522 – $333 = $208 net revenue for the day [Calculating Your Break Even Point, page 4]. Page 4 also carries a second, smaller worked example at the menu-item level — an Americano costing $.50 coffee plus $.27 for cup, lid, and sleeve = $.77 total, against a $2.75 sale price for a $1.98 margin [Calculating Your Break Even Point, page 4].\n\n**So:** if you want the single page with the concrete break-even computation, it's page 4; if you want the full worked example including the inputs it depends on, it's pages 2–4.",
+      "expected_answer": "Pages 2-3 contain the worked example: $7,200 monthly fixed costs (rent $2,000, insurance $300, loan $350, salary $4,200), $2,800 variable costs, $522 daily revenue.",
+      "arm": "C",
+      "telemetry": {
+        "generation_wall_s": 18.88,
+        "num_turns": 3,
+        "duration_ms": 16064,
+        "duration_api_ms": 15596,
+        "cost_usd": 0.1435915,
+        "input_tokens": 6,
+        "output_tokens": 1009,
+        "cache_read_input_tokens": 17335,
+        "permission_denials": [],
+        "session_id": "036bc217-9ae7-49b3-b150-7c9739d2efc3",
+        "cache_hit": true
+      }
+    },
+    {
+      "id": "h07",
+      "question": "Compare how the 'Briefing Doc - Opening and Operating a Profitable Coffee Shop' and 'Calculating Your Break Even Point' present the break-even calculation. What's the same and what's different?",
+      "question_type": "synthesis",
+      "holdout": false,
+      "must_cite_sources": [
+        {
+          "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+          "pages": [
+            4,
+            5
+          ]
+        },
+        {
+          "source": "Calculating Your Break Even Point",
+          "pages": [
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "retrieved": [],
+      "recall": {
+        "applicable": false,
+        "reason": "C_agentic_files does not rank"
+      },
+      "mrr_at_10": null,
+      "ndcg_at_10": null,
+      "verdict": "DIFFERENT",
+      "judge": {
+        "relevance": 2,
+        "groundedness": 1,
+        "citation_accuracy": 1,
+        "critical_errors": [
+          "CITATION_WRONG",
+          "HALLUCINATION",
+          "WRONG_EVIDENCE"
+        ],
+        "short_rationale": "The candidate invents a second 'unit-margin' Briefing Doc formula, a doubling-wholesale-cost quote, and a sourcing claim, all attributed to pages (e.g. Briefing Doc page 1, 2, 7) that are not in the evidence and whose content does not appear anywhere in the retrieved chunks.",
+        "flip_rate_relevance": 0.0,
+        "flip_rate_groundedness": 0.0,
+        "n_runs": 1,
+        "escalated": false,
+        "per_run": [
+          {
+            "relevance": 2,
+            "groundedness": 1,
+            "citation_accuracy": 1,
+            "critical_errors": [
+              "HALLUCINATION",
+              "CITATION_WRONG",
+              "WRONG_EVIDENCE"
+            ],
+            "short_rationale": "The candidate invents a second 'unit-margin' Briefing Doc formula, a doubling-wholesale-cost quote, and a sourcing claim, all attributed to pages (e.g. Briefing Doc page 1, 2, 7) that are not in the evidence and whose content does not appear anywhere in the retrieved chunks."
+          }
+        ]
+      },
+      "citation_validation": {
+        "n_citations": 11,
+        "n_source_valid": 11,
+        "n_page_valid": 11,
+        "source_accuracy": 1.0,
+        "page_accuracy": 1.0,
+        "per_citation": [
+          {
+            "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+            "pages": [
+              3
+            ],
+            "raw": "[Briefing Doc - Opening and Operating a Profitable Coffee Shop, page 3]",
+            "source_exists": true,
+            "page_matches": true,
+            "valid": true
+          },
+          {
+            "source": "Calculating Your Break Even Point",
+            "pages": [
+              1
+            ],
+            "raw": "[Calculating Your Break Even Point, page 1]",
+            "source_exists": true,
+            "page_matches": true,
+            "valid": true
+          },
+          {
+            "source": "Briefing Doc",
+            "pages": [
+              1
+            ],
+            "raw": "[Briefing Doc, page 1]",
+            "source_exists": true,
+            "page_matches": true,
+            "valid": true
+          },
+          {
+            "source": "Briefing Doc, page 5 and page 7; Calculating Your Break Even Point",
+            "pages": [
+              3
+            ],
+            "raw": "[Briefing Doc, page 5 and page 7; Calculating Your Break Even Point, page 3]",
+            "source_exists": true,
+            "page_matches": true,
+            "valid": true
+          },
+          {
+            "source": "Calculating Your Break Even Point",
+            "pages": [
+              5
+            ],
+            "raw": "[Calculating Your Break Even Point, page 5]",
+            "source_exists": true,
+            "page_matches": true,
+            "valid": true
+          },
+          {
+            "source": "Briefing Doc, page 6; Calculating Your Break Even Point",
+            "pages": [
+              5
+            ],
+            "raw": "[Briefing Doc, page 6; Calculating Your Break Even Point, page 5]",
+            "source_exists": true,
+            "page_matches": true,
+            "valid": true
+          },
+          {
+            "source": "Briefing Doc",
+            "pages": [
+              5
+            ],
+            "raw": "[Briefing Doc, page 5]",
+            "source_exists": true,
+            "page_matches": true,
+            "valid": true
+          },
+          {
+            "source": "Calculating Your Break Even Point",
+            "pages": [
+              2,
+              3
+            ],
+            "raw": "[Calculating Your Break Even Point, pages 2-3]",
+            "source_exists": true,
+            "page_matches": true,
+            "valid": true
+          },
+          {
+            "source": "Calculating Your Break Even Point",
+            "pages": [
+              2
+            ],
+            "raw": "[Calculating Your Break Even Point, page 2]",
+            "source_exists": true,
+            "page_matches": true,
+            "valid": true
+          },
+          {
+            "source": "Calculating Your Break Even Point",
+            "pages": [
+              4,
+              5
+            ],
+            "raw": "[Calculating Your Break Even Point, pages 4-5]",
+            "source_exists": true,
+            "page_matches": true,
+            "valid": true
+          },
+          {
+            "source": "Briefing Doc",
+            "pages": [
+              2
+            ],
+            "raw": "[Briefing Doc, page 2]",
+            "source_exists": true,
+            "page_matches": true,
+            "valid": true
+          }
+        ]
+      },
+      "actual_answer": "Both documents cover the break-even point, but at very different levels of resolution.\n\n## What's the same\n\n**The conceptual definition is essentially identical — nearly verbatim.** The Briefing Doc's FAQ says your break-even point \"is the moment in time where your total costs are equal to your revenue. Anything below your break-even point means you are not turning a profit. Anything above it constitutes a profit. When you reach your break-even point, the operations of your business have covered your fixed and variable costs\" [Briefing Doc - Opening and Operating a Profitable Coffee Shop, page 3]. The source article uses the same wording: the break-even point \"is the moment in time where your total costs are equal to your revenue... When you reach your break-even point, the operations of your business have covered your fixed and variable costs\" [Calculating Your Break Even Point, page 1]. The Briefing Doc in fact cites \"Calculating...\" as one of its sources for the break-even and pricing sections [Briefing Doc, page 1].\n\n**Both split costs into fixed vs. variable** along the same lines — fixed as rent/insurance/salaries, variable as fluctuating with sales volume [Briefing Doc, page 5 and page 7; Calculating Your Break Even Point, page 3].\n\n**Both tie break-even to pricing decisions,** and both mention the same shortcut heuristic of doubling wholesale cost: the Briefing Doc says \"Consider a simple strategy like doubling the wholesale cost\" [Briefing Doc, page 1], and the article gives the same example — buy a bagel or muffin for $1.00, sell it for $2.00 [Calculating Your Break Even Point, page 5].\n\n**Both frame it as a recurring management tool,** not a one-time calculation, used to inform pricing, menu, and cost control [Briefing Doc, page 6; Calculating Your Break Even Point, page 5].\n\n## What's different\n\n**1. Form of the formula.** The Briefing Doc gives a compact, unit-margin formula: `Fixed Costs / (Selling Price per Unit - Cost per Unit)` [Briefing Doc, page 1]. The article's formula is `Fixed Costs ÷ Sales Margin = Break-Even Point (sales dollars)`, with `Gross Sales Revenue – Variable Costs = Sales Margin` [Calculating Your Break Even Point, page 5].\n\n**2. The Briefing Doc is internally inconsistent.** It states the per-unit formula on page 1, but its FAQ later gives a different one: `Break-even point = Fixed Costs / Gross Margin %`, worked as $22,000 ÷ 0.85 = $26,000 in monthly sales [Briefing Doc, page 5]. So the Briefing Doc presents two formulas — a unit-volume version and a sales-dollar version — without reconciling them. (Its own arithmetic also rounds: 22,000 ÷ 0.85 is about $25,882.)\n\n**3. Worked example: single illustrative number vs. full build-up.** The Briefing Doc gives one abstract example with assumed inputs [Briefing Doc, page 5]. The article builds a complete scenario from scratch: startup costs itemized to $21,800, a $10,000 loan at $350/month, monthly fixed costs of $7,200 ($240/day), monthly variable costs of $2,800 ($93.33/day), total operational costs of $10,000/month [Calculating Your Break Even Point, pages 2-3]; then a revenue projection of $4.35 average check × 12 transactions/hour × 10 hours = $522/day, or $15,660/month [page 3]; then $522 – $333 = $208 net revenue per day [page 4].\n\n**4. Treatment of startup costs — the biggest substantive divergence.** The Briefing Doc's formulas use fixed costs only and never address whether startup capital belongs in the calculation. The article makes this its central caveat: \"While many large companies calculate without the startup costs, I think it's worthwhile to figure out your break-even point with the costs you had to start your business,\" warning that the conventional method \"may give you a false sense of profit if you still owe money\" [Calculating Your Break Even Point, page 2]. It poses the question directly — would break-even be reached once you paid off a $10,000 startup loan, or is it just current operating costs vs. current revenue? [page 1]. Its step list accordingly includes amortizing startup costs over a chosen payback period (e.g., 36 months) and adding that to monthly fixed and variable costs [page 5]. The article even concludes its own worked example ambiguously — you're profitable at $208/day, but \"have you then passed your break-even point? Perhaps,\" since the loan isn't repaid and personal investment isn't recovered [page 4].\n\n**5. Per-item vs. whole-operation analysis.** The article adds a section on break-even for single menu items, with an Americano costing $0.50 coffee + $0.27 cup/lid/sleeve = $0.77, sold at $2.75 for a $1.98 margin — explicitly noting this excludes equipment, rent, insurance, and labor [Calculating Your Break Even Point, pages 4-5]. It also notes that because a coffee shop sells multiple products each with different margins, aggregating all costs is often more practical than per-item analysis [page 5]. The Briefing Doc's per-unit formula implies item-level analysis but never develops it.\n\n**6. Data and tooling.** The article stresses that any method requires data and recommends a POS system to supply sales, inventory, and labor numbers [Calculating Your Break Even Point, page 5]. The Briefing Doc discusses POS systems too, but under operations/technology rather than as an input to break-even [Briefing Doc, page 2].\n\n**Bottom line:** the Briefing Doc is a summary that preserves the article's definition faithfully but compresses the method into a formula line — and in doing so drops the article's main argument (that the standard formula can mislead you if startup debt is excluded) while introducing an unreconciled second formula. If you need the calculation itself, work from the article; the Briefing Doc is a recall aid.",
+      "expected_answer": "Both define break-even as the sales level where total costs are covered. The Briefing Doc gives a simple formula: Fixed Costs / Gross Margin %, with example $22,000 / 0.85 = $26,000. Calculating Your Break Even Point gives a more detailed multi-step method: amortize startup costs, sum monthly fixed and variable costs, then Fixed Costs / Sales Margin where Sales Margin = Gross Sales Revenue − Variable Costs. Worked example uses $7,200 fixed + $2,800 variable = $10,000 monthly cost vs ~$522/day revenue.",
+      "arm": "C",
+      "telemetry": {
+        "generation_wall_s": 39.19,
+        "num_turns": 4,
+        "duration_ms": 35867,
+        "duration_api_ms": 34867,
+        "cost_usd": 0.2456135,
+        "input_tokens": 6,
+        "output_tokens": 2621,
+        "cache_read_input_tokens": 17407,
+        "permission_denials": [],
+        "session_id": "9d285803-5c28-4b3f-9474-ff1d372378a3",
+        "cache_hit": true
+      }
+    },
+    {
+      "id": "h12",
+      "question": "What is the 2023 baseline annual revenue figure for Broadway Cafe in the financial model?",
+      "question_type": "numeric",
+      "holdout": false,
+      "must_cite_sources": [
+        {
+          "source": "Broadway_Cafe_Financial_Model_Template S26",
+          "pages": [
+            1,
+            2
+          ]
+        }
+      ],
+      "retrieved": [],
+      "recall": {
+        "applicable": false,
+        "reason": "C_agentic_files does not rank"
+      },
+      "mrr_at_10": null,
+      "ndcg_at_10": null,
+      "verdict": "EQUIVALENT",
+      "judge": {
+        "relevance": 5,
+        "groundedness": 5,
+        "citation_accuracy": 5,
+        "critical_errors": [
+          "NONE"
+        ],
+        "short_rationale": "numeric coverage: 5/5",
+        "flip_rate_relevance": 0.0,
+        "flip_rate_groundedness": 0.0,
+        "n_runs": 0,
+        "escalated": false,
+        "per_run": []
+      },
+      "citation_validation": {
+        "n_citations": 5,
+        "n_source_valid": 5,
+        "n_page_valid": 5,
+        "source_accuracy": 1.0,
+        "page_accuracy": 1.0,
+        "per_citation": [
+          {
+            "source": "Broadway_Cafe_Financial_Model_Template S26",
+            "pages": [
+              2
+            ],
+            "raw": "[Broadway_Cafe_Financial_Model_Template S26, page 2]",
+            "source_exists": true,
+            "page_matches": true,
+            "valid": true
+          },
+          {
+            "source": "Broadway_Cafe_Financial_Model_Template S26",
+            "pages": [
+              3
+            ],
+            "raw": "[Broadway_Cafe_Financial_Model_Template S26, page 3]",
+            "source_exists": true,
+            "page_matches": true,
+            "valid": true
+          },
+          {
+            "source": "Broadway_Cafe_Financial_Model_Template S26",
+            "pages": [
+              14
+            ],
+            "raw": "[Broadway_Cafe_Financial_Model_Template S26, page 14]",
+            "source_exists": true,
+            "page_matches": true,
+            "valid": true
+          },
+          {
+            "source": "Broadway_Cafe_Financial_Model_User_Guide",
+            "pages": [
+              1
+            ],
+            "raw": "[Broadway_Cafe_Financial_Model_User_Guide, page 1]",
+            "source_exists": true,
+            "page_matches": true,
+            "valid": true
+          },
+          {
+            "source": "Broadway_Cafe_Financial_Model_Template S26",
+            "pages": [
+              1
+            ],
+            "raw": "[Broadway_Cafe_Financial_Model_Template S26, page 1]",
+            "source_exists": true,
+            "page_matches": true,
+            "valid": true
+          }
+        ]
+      },
+      "actual_answer": "**The 2023 baseline annual revenue for Broadway Café is $720,000.**\n\nDetails from the model:\n\n- On the **Inputs** tab, the assumption is listed as \"2023 Revenue | $/year | 720000 | Starting historical revenue\" [Broadway_Cafe_Financial_Model_Template S26, page 2]. The companion input \"2023 Cash Flow\" is $60,000/year, described as an operating cash flow proxy [Broadway_Cafe_Financial_Model_Template S26, page 2].\n- On the **Hist_2023_2025** tab, 2023 is the \"Starting point\" row with revenue of $720,000 and cash flow of $60,000 [Broadway_Cafe_Financial_Model_Template S26, page 3].\n- The same $720,000 figure appears in the **Charts** support table for the 2023 period [Broadway_Cafe_Financial_Model_Template S26, page 14].\n\n**How it flows forward:** an Annual Revenue Decline Rate of 10% is applied pre-modernization [Broadway_Cafe_Financial_Model_Template S26, page 2], taking revenue from $720,000 in 2023 → $648,000 in 2024 (\"Decline from weak operating model\") → $583,200 in 2025, which the model labels the \"Final pre-modernization baseline\" [Broadway_Cafe_Financial_Model_Template S26, page 3].\n\nOne clarification on terminology: the model treats **2025** ($583,200), not 2023, as \"the baseline\" for the investment case — the User Guide instructs students to \"Review Hist_2023_2025 and Income_2025. Decide what the 2025 baseline says about the café's weakness\" [Broadway_Cafe_Financial_Model_User_Guide, page 1], and the template's Purpose section describes showing \"the pre-modernization decline, the 2025 baseline, the 2026 transition year\" [Broadway_Cafe_Financial_Model_Template S26, page 1]. So $720,000 is the 2023 **starting historical** revenue that anchors the decline story, while \"baseline\" in the model's own language refers to 2025.",
+      "expected_answer": "$720,000 in 2023 baseline revenue.",
+      "arm": "C",
+      "telemetry": {
+        "generation_wall_s": 29.68,
+        "num_turns": 5,
+        "duration_ms": 26541,
+        "duration_api_ms": 25443,
+        "cost_usd": 0.16030149999999996,
+        "input_tokens": 8,
+        "output_tokens": 1705,
+        "cache_read_input_tokens": 29783,
+        "permission_denials": [],
+        "session_id": "b663882f-3f8e-4946-86a5-130f57ad017b",
+        "cache_hit": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local Claude Code settings
+.claude/
+
+# Runtime data: vector store, BM25 index, caches, traces, logs
+data/
+
+# Source documents (course PDFs — not redistributable)
+sources/
+
+# Personal capstone deliverables (kept local)
+deliverables/
+
+# Historical snapshots
+.backup_*/
+
+*.log

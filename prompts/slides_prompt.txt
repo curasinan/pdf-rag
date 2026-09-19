@@ -1,0 +1,81 @@
+Generate a 10-slide presentation outline for The Broadway Café modernization plan, based on the business plan below. Output JSON only — no preamble, no markdown, no code fences.
+
+BUSINESS PLAN:
+{{BUSINESS_PLAN}}
+
+OUTPUT SCHEMA (strict JSON):
+{
+  "slides": [
+    {
+      "kind": "title" | "content",
+      "title": "string ≤8 words",
+      "subtitle": "only when kind=title",
+      "bullets": ["string ≤12 words", ...],
+      "notes": "speaker notes 60-100 words"
+    }
+  ]
+}
+
+10 SLIDES (matching MIS-311 capstone presentation rubric):
+
+Slide 1 — TITLE
+- kind: "title"
+- title: "The Broadway Café — Modernization Plan"
+- subtitle: "Section 91 Group 21 | MIS 311 | Spring 2026"
+- notes: list team members (Sinan Cura, Mert Palacios Bojalil, Mehmet Emir Ocal, Esra Gurses, Emre Erbek), state opening hook about transforming a declining legacy café via systems-driven modernization
+
+Slide 2 — VISION & MISSION
+- kind: "content"
+- title: "Vision & Mission"
+- bullets: 4 bullets covering modernization vision (CX + efficiency + data-driven), mission statement tied to value, "technology is enabler, strategy + execution create advantage", systems thinking framing
+- notes: 60-80 words explaining the strategic intent before any technology discussion
+
+Slide 3 — KEY MODERNIZATION STRATEGIES
+- kind: "content"
+- title: "Modernization Strategies"
+- bullets: 5 bullets — AI (forecasting + personalization), ERP (integrated processes + data), POS + mobile payments, blockchain (premium beans only), enablers row (process ownership + master data + governance)
+- notes: 60-80 words explaining why these tools support strategy and what problem each solves
+
+Slide 4 — MARKET OPPORTUNITY
+- kind: "content"
+- title: "Market Opportunity"
+- bullets: target customer segments, key competitors, pain points competitors fail to solve, differentiation lens "competitors may use same tools — we design the system better"
+- notes: 60-80 words on customer personas + competitive positioning
+
+Slide 5 — TECHNOLOGY INTEGRATION (NOT SILOS)
+- kind: "content"
+- title: "Integrated Architecture"
+- bullets: AI-driven marketing using clean master data, ERP as system of record, blockchain + security embedded not bolted on, "Data → Process → Decision → Outcome" loop
+- notes: 60-80 words referencing real-world parallel like Starbucks demand-surge handling via forecasting + process redesign
+
+Slide 6 — OPERATIONAL IMPROVEMENTS (HOW WORK CHANGES)
+- kind: "content"
+- title: "How Work Changes"
+- bullets: As-Is/To-Be order-to-inventory, workforce scheduling, customer feedback loop, example "Clean SKU master data → accurate inventory → fewer stockouts → higher CSAT"
+- notes: 60-80 words on enablers → outcomes chain with concrete KPIs (order time, inventory turns, labor utilization)
+
+Slide 7 — PHASED IMPLEMENTATION ROADMAP
+- kind: "content"
+- title: "Phased Implementation"
+- bullets: Phase 1 Foundation (POS + data cleanup + security, 6mo), Phase 2 Integration (ERP + inventory + loyalty, 6mo), Phase 3 Optimization (AI personalization + agentic AI + continuous improvement, 12mo), key idea "value compounds as systems mature"
+- notes: 60-80 words on why this sequence and what unlocks each phase
+
+Slide 8 — FINANCIAL PLAN, CSFs & KPIs
+- kind: "content"
+- title: "Financials & Measurement"
+- bullets: revenue growth drivers, cost savings (labor + waste), break-even logic, top 3 CSFs, top 4 KPIs (avg order time, repeat visit rate, inventory waste %, ROI on promotions)
+- notes: 60-80 words tying financial improvements to operational changes, mention 5-year horizon and break-even target
+
+Slide 9 — RISKS, MITIGATION & INVESTMENT
+- kind: "content"
+- title: "Risks & Investment"
+- bullets: 4 key risks (data quality, adoption, security/privacy, over-automation), mitigation summary (governance + training + cyber controls + human-in-the-loop), capital ask + phase allocation, expected ROI logic
+- notes: 60-80 words on risk handling philosophy and investment thesis
+
+Slide 10 — CAPSTONE REFLECTION (CLOSING)
+- kind: "content"
+- title: "Closing — Systems Thinking"
+- bullets: how systems thinking guided decisions, how enablers unlocked value, why competitors can't easily copy execution, takeaway "Technology is available to everyone — disciplined systems design is not"
+- notes: 60-80 words synthesizing the strategy → enablers → systems → outcomes loop, invite Q&A
+
+Output the JSON now. Start with `{` and end with `}`. No code fences. No preamble.

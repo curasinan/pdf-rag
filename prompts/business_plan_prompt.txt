@@ -1,0 +1,162 @@
+You are writing a complete capstone business plan for The Broadway Café for the Spring 2026 MIS-311 final project. Output a single markdown document with all 12 required sections plus appendix.
+
+TEAM (use on title page exactly):
+- Group: Section 91 Group 21
+- Course: MIS 311 — Information Systems & Applications, Spring 2026
+- Members: Sinan Cura, Mert Palacios Bojalil, Mehmet Emir Ocal, Esra Gurses, Emre Erbek
+
+REFERENCE MATERIAL (cite inline as [Source name, p.X]):
+{{CORPUS}}
+
+REQUIREMENTS — Output a complete business plan in markdown with these 12 sections (rubric weights in parentheses). Hit Level 4 on every criterion.
+
+1. Executive Summary (0.5)
+   - Vision & Mission (modernization vision: customer experience + efficiency + data-driven decisions)
+   - Modernization Strategy Overview (systems + enablers, NOT just tools)
+   - Investment Proposition (capital, allocation, value creation logic that compounds)
+   Length: 350-400 words.
+
+2. Company Description (0.5)
+   - Background & Legacy (the grandfather's café, inherited legacy needing modernization)
+   - Current Challenges & Market Gaps (declining revenue, outdated systems, competitive pressure)
+   - Multi-member LLC structure (no income tax expense at entity level)
+   Length: 200-250 words.
+
+3. Market Analysis (1.0)
+   - Target Market Segments (commuters, remote workers, students, social meetups; demographics + behaviors)
+   - Competitive Landscape (Starbucks, Dunkin', local chains, substitutes like home brewing)
+   - Industry Trends (digital transformation, AI personalization, mobile, sustainability, contactless)
+   - REQUIRED FRAMING (must be explicit): Explain how competitors may use similar technologies but fail to achieve the same outcomes due to weaker systems integration, weaker master data, and weaker execution discipline. This is the central differentiation argument.
+   Length: 600-700 words.
+
+4. Marketing Strategy (1.0)
+   - Branding & Positioning (community, quality, experience — beyond price/convenience)
+   - Promotions & Advertising (loyalty programs tied to POS, mobile coupons, AI personalization based on purchase history)
+   - Sales Channels (in-store, mobile order, delivery via DoorDash/UberEats, community partnerships)
+   - Pricing Strategy (data-informed, margin-aware, reference COGS data)
+   - REQUIRED SYSTEMS REQUIREMENT (must be explicit): explain how marketing effectiveness depends on clean customer master data and clean promotion master data. Without these, AI personalization fails and KPIs are noise.
+   Length: 600-700 words.
+
+5. Products & Services (1.0)
+   - Menu Offerings (core: drip + espresso + pastries; premium: single-origin specialty; seasonal: pumpkin-spice fall, peppermint winter, iced summer)
+   - Value-Added Services (events: open-mic, study nights; experiential: latte art classes, tastings)
+   - Tie EVERY offering to three things: customer value, operational feasibility, data capture opportunity.
+   Length: 600-700 words.
+
+6. Location & Layout (0.5)
+   - Physical Store Design (zones: quick-service bar, lounge, study, outdoor patio; flow; sustainability: compostable cups, energy-efficient equipment, local sourcing)
+   - Technology Integration (self-ordering kiosks, mobile-order pickup zone, digital signage, beacon personalization)
+   - Explain how layout + tech support process efficiency AND data collection.
+   Length: 250-300 words.
+
+7. Management & Organization (0.5)
+   - Key Roles & Responsibilities (Owner: vision/finance; General Manager: daily ops; Shift Leads; Lead Barista; Marketing Coordinator; IT/Systems Coordinator part-time consultant)
+   - Process Ownership (REQUIRED — name explicit owners):
+     * Order-to-Cash: General Manager
+     * Inventory Management: Lead Barista (with GM approval over $X)
+     * Customer Engagement & Loyalty: Marketing Coordinator
+     * Systems & Data Quality: IT/Systems Coordinator
+   - Workforce Optimization (AI-supported scheduling using POS demand patterns)
+   - REQUIRED LINE: state the principle "no process owner = no accountability = no value" and apply it.
+   Length: 300-350 words.
+
+8. Operations Plan (0.5)
+   - Daily Workflows (ordering, fulfillment, inventory replenishment, vendor coordination, shift open/close)
+   - Supply Chain & Vendors (AI demand forecasting drives PO timing; blockchain for premium-bean origin verification — only for genuine origin trust, not loyalty points)
+   - REQUIRED: an As-Is → To-Be markdown table with at least 4 workflows showing current pain and post-modernization state.
+   Length: 350-400 words including the table.
+
+9. Digital Transformation (Technology) Plan (4.0) — HIGHEST WEIGHT, BE THOROUGH
+   Four primary subsections:
+   - ERP Strategy (single system of record integrating POS, inventory, accounting, payroll; e.g., Toast for restaurant ERP; justify integration over best-of-breed point solutions)
+   - AI & Blockchain Use Cases (demand forecasting using sales + weather + local events; personalized recommendations at POS/mobile; blockchain ONLY for premium-bean origin verification)
+   - POS & Payments (contactless cards, mobile wallets Apple/Google Pay, loyalty integration at point of sale)
+   - Cybersecurity (PCI-DSS for payments, customer data encryption at rest and in transit, role-based access, vendor SOC-2 requirements)
+
+   REQUIRED — Master Data Management section: explain how clean customer + product + vendor master data enables analytics, AI, and reliable decision-making. Without it, AI use cases produce noise. State this explicitly.
+
+   REQUIRED — Agentic AI Workflow with all 5 components (each labeled and explicit):
+   - Outcome: specific business change, not features (e.g., "reduce morning peak labor cost by 8% via dynamic staffing")
+   - Workflow: agent's input → action → output steps (e.g., "agent reads 14-day sales history + weather forecast, generates draft schedule, posts to manager Slack")
+   - Human Judgment Checkpoints: manager approves before publish; agent flags exceptions over X variance for human override
+   - Guardrails: cannot exceed budget envelope; cannot violate labor law minimums; all agent actions logged with reasoning
+   - Measurement: KPI = labor cost as % of revenue, target 26% (down from 29%); validation via 8-week A/B test with one control week pattern
+
+   Length: 1500-1800 words. This is your longest, most rigorous section.
+
+10. Financial Plan (3.0) — SECOND HIGHEST WEIGHT
+    Six subsections all tied to operational decisions in Sections 7-9:
+    - Pre-Modernization Trends (2023–2025): document the 10% annual revenue decline (per Business Plan Assumptions). Show absolute dollars and percent.
+    - Modernization Forecast (2026–2030): growth driven by EXPLICIT operational improvements:
+      * Mobile ordering captures incremental traffic (+X% revenue, drives from Operations Plan)
+      * Loyalty program lifts repeat-visit frequency (+Y% revenue, drives from Marketing Strategy)
+      * AI scheduling reduces labor cost (-Z% labor, drives from Tech Plan agentic workflow)
+      * AI demand forecasting reduces waste (-W% COGS, drives from Tech Plan AI use cases)
+      For each, state which Tech Plan or Operations Plan element drives it.
+    - Expense Adjustments (labor down via AI scheduling; marketing up to fund loyalty + AI personalization; automation capex Year 1, savings Years 2+; technology subscriptions recurring)
+    - Break-Even Analysis (Fixed Costs / Gross Margin %; show pre- and post-modernization break-even)
+    - Five-Year Forecast (2026 monthly with revenue/COGS/OpEx/EBITDA; 2027-2030 annual same)
+    - Balance Sheets 2025 vs 2030 showing capex impact and retained earnings.
+
+    REQUIRED FRAMING (rubric explicit): tie every financial improvement explicitly to an operational or system change. Numbers without operational backing score Level 2.
+    Reference the appendix: "see appendix for monthly 2026 detail and 2027-2030 annual."
+    Length: 800-1000 words.
+
+11. Funding Request (0.5)
+    - Capital Required (total + per-phase: Phase 1 Foundation 6mo POS+data+security; Phase 2 Integration 6mo ERP+inventory+loyalty; Phase 3 Optimization 12mo AI+agentic)
+    - Use of Funds (technology, data cleanup, training, infrastructure, working capital)
+    - ROI Logic (value compounds: Phase 1 enables Phase 2's data, enables Phase 3's AI; Year 1 capex pays back by Year 3 via labor + waste reduction)
+    Length: 250-300 words.
+
+12. Risk Analysis, CSFs & KPIs (0.5)
+    - System-level risks WITH mitigation (each):
+      * Poor data quality → data ownership, master data governance, monthly data-quality audits
+      * Low employee adoption → phased rollout, in-shift training, manager-led demo, incentive tied to system usage
+      * Cybersecurity threats → PCI-DSS audit, SOC-2 vendors, quarterly pen-test, incident response plan
+      * Over-automation hurting customer experience → human-in-the-loop for personalization, opt-out for customers, regular CSAT review by GM
+    - Required CSFs grouped by stakeholder:
+      * Management-Level: revenue growth, cost reduction, customer retention
+      * Operations / Barista-Level: order fulfillment speed, customer satisfaction
+      * IT & Security: system uptime, incident prevention
+      * Marketing & Sales: loyalty adoption, mobile order usage
+    - REQUIRED: KPI markdown table linking each CSF to a measurable KPI and the SYSTEM that moves it.
+    Length: 400-500 words including KPI table.
+
+13. Appendix (0.5)
+    - Bibliography in MLA format listing every cited source (use the source names from REFERENCE MATERIAL above; format as "Title. *Course Reading*, Spring 2026, n.d.").
+    - AI Use Disclosure (honest, specific):
+      * Tools: Claude (Sonnet for slide and XLSX generation, Opus for body section synthesis), accessed via Claude Code CLI (no paid API); RAG retrieval pipeline (BGE-M3 embeddings + BM25 + cross-encoder reranker) for source synthesis from the 24 provided course materials.
+      * Scope: synthesis of provided materials into structured business plan; financial model assumption suggestions reviewed against Business Plan Assumptions document.
+      * NOT done by AI: original strategic decisions (process owner names, phase sequencing, financial assumption final values were AI-suggested then human-validated by named team members), voice/tone (final pass by team), Turnitin compliance (human review).
+      * Team validation: each section reviewed by the named team member responsible for that domain.
+    - Assumptions Linkage table (for the financial model): list 5-10 key assumption values with their source (which business plan section justifies the number).
+    Length: 300-400 words.
+
+OUTPUT FORMAT (strict):
+- Single markdown document, no preamble, no conversational opener.
+- Start with title page block:
+
+# The Broadway Café — Modernization Business Plan
+
+**Section 91 Group 21** | MIS 311 Information Systems & Applications | Spring 2026
+
+**Team:** Sinan Cura, Mert Palacios Bojalil, Mehmet Emir Ocal, Esra Gurses, Emre Erbek
+
+---
+
+- Then 12 numbered section headings (## level) plus appendix.
+- Use ### for subsections.
+- Use markdown tables for As-Is/To-Be (Section 8) and KPI table (Section 12).
+- Inline citations as [Source name, p.X].
+- Total: 5500-7500 words.
+
+SELF-CHECK BEFORE FINALIZING (silent — do not output the checklist):
+- Section 9 has all 5 Agentic AI workflow components explicit and labeled.
+- Section 9 has Master Data Management discussed.
+- Section 10 ties every number to an operational change.
+- Section 7 names explicit process owners and includes the "no process owner = no accountability = no value" line.
+- Section 3 makes the "competitors use same tools but fail at execution" framing explicit.
+- Bibliography lists all cited sources.
+- AI use disclosure is honest and specific.
+
+Begin the output now with the title page. No preamble.

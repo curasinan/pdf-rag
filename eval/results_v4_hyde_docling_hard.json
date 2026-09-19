@@ -1,0 +1,1958 @@
+[
+  {
+    "id": "h01",
+    "question": "What is described as KPI #5 in the 5 KPIs document, and on which page is it defined?",
+    "question_type": "page_lookup",
+    "must_cite_sources": [
+      {
+        "source": "5 KPIs Every Clever Café Manager Should Track",
+        "pages": [
+          8
+        ]
+      }
+    ],
+    "retrieved": [
+      {
+        "source": "5 KPIs Every Clever Café Manager Should Track",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "5 KPIs Every Clever Café Manager Should Track",
+        "pages": "[4, 5, 6]"
+      },
+      {
+        "source": "High-Level Strategic Roadmap - Transforming a Declining Coffee Shop…",
+        "pages": "[2]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[3, 4]"
+      },
+      {
+        "source": "High-Level Strategic Roadmap - Transforming a Declining Coffee Shop…",
+        "pages": "[4]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": "[9, 10, 11, 12, 13, 14]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[6, 7]"
+      },
+      {
+        "source": "Appendix X AI Use Disclosure Team-Level — Manager Judgment Required",
+        "pages": "[1]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[2, 3]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": "[1, 2, 3]"
+      }
+    ],
+    "recall": {
+      "applicable": true,
+      "source_full": true,
+      "pages_full": false,
+      "partial": 1.0,
+      "per_source": [
+        {
+          "source": "5 KPIs Every Clever Café Manager Should Track",
+          "wanted_pages": [
+            8
+          ],
+          "source_hit": true,
+          "page_hit": false
+        }
+      ]
+    },
+    "verdict": "PARTIAL",
+    "actual_answer": "Based on the provided context, **KPI #5 is not fully defined** in the excerpts given. However, there is a reference to it on **pages 4–5** in the RevPASH section, which states:\n\n> \"you could examine how quickly patrons are seated (see KPI number 5 in our article)\"\n\nThis strongly suggests that **KPI #5 relates to seating speed or table turnover** (how quickly patrons are seated), but the actual section defining KPI #5 in detail was not included in the context provided to me. The document covers pages 1–6, and while KPI #1 (Employee Retention Rate) and RevPASH are defined in the excerpts, the dedicated section for KPI #5 appears to fall outside the retrieved chunks.\n\nIf you need the full definition, I'd recommend querying specifically for the later pages of the \"5 KPIs Every Clever Café Manager Should Track\" document.",
+    "expected_answer": "KPI #5 is Table Turn Time, defined on page 8 of the 5 KPIs document."
+  },
+  {
+    "id": "h02",
+    "question": "On what pages does the Why Do Coffee Shops Fail document discuss owner burnout?",
+    "question_type": "page_lookup",
+    "must_cite_sources": [
+      {
+        "source": "Why Do Coffee Shops Fail",
+        "pages": [
+          25,
+          26
+        ]
+      }
+    ],
+    "retrieved": [
+      {
+        "source": "Why Do Coffee Shops Fail",
+        "pages": "[25, 26, 27]"
+      },
+      {
+        "source": "Why Do Coffee Shops Fail",
+        "pages": "[27, 28, 29]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[3, 4]"
+      },
+      {
+        "source": "7 Costs That Sink Coffee Shops",
+        "pages": "[1, 2, 3, 4, 5]"
+      },
+      {
+        "source": "7 Costs That Sink Coffee Shops",
+        "pages": "[14, 15, 16, 17]"
+      },
+      {
+        "source": "How to Promote and Market Your Coffee Shop",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "How to Beat Your Coffee Shop Competition",
+        "pages": "[7, 8, 9, 10]"
+      },
+      {
+        "source": "How to Beat Your Coffee Shop Competition",
+        "pages": "[13, 14, 15, 16, 18]"
+      },
+      {
+        "source": "How to improve sales and profitabiity for your coffe shop",
+        "pages": "[11, 12]"
+      }
+    ],
+    "recall": {
+      "applicable": true,
+      "source_full": true,
+      "pages_full": true,
+      "partial": 1.0,
+      "per_source": [
+        {
+          "source": "Why Do Coffee Shops Fail",
+          "wanted_pages": [
+            25,
+            26
+          ],
+          "source_hit": true,
+          "page_hit": true
+        }
+      ]
+    },
+    "verdict": "PARTIAL",
+    "actual_answer": "The \"Why Do Coffee Shops Fail\" document discusses owner burnout on **pages 25–27**. This section covers how burnout can occur within the first two years, its common causes (difficulty of opening, unexpected growth, managing employees, neglecting personal life), its consequences (poor service, laggard sales, business closure), and strategies to avoid it (hiring right, delegating, resting, budgeting, planning).",
+    "expected_answer": "Owner burnout is discussed on pages 25-26 of Why Do Coffee Shops Fail."
+  },
+  {
+    "id": "h03",
+    "question": "On which pages of '7 Costs That Sink Coffee Shops' is 'Employee Giveaways' covered, and what is the core idea?",
+    "question_type": "page_lookup",
+    "must_cite_sources": [
+      {
+        "source": "7 Costs That Sink Coffee Shops",
+        "pages": [
+          8,
+          9,
+          10,
+          11
+        ]
+      }
+    ],
+    "retrieved": [
+      {
+        "source": "7 Costs That Sink Coffee Shops",
+        "pages": "[19, 20, 21]"
+      },
+      {
+        "source": "7 Costs That Sink Coffee Shops",
+        "pages": "[8, 9, 10, 11]"
+      },
+      {
+        "source": "7 Ways To Run A More Efficient Coffee Shop",
+        "pages": "[5, 6]"
+      },
+      {
+        "source": "How to Increase Your Coffee Shop Profits with Loyalty Programs",
+        "pages": "[11, 12, 13]"
+      },
+      {
+        "source": "Why Do Coffee Shops Fail",
+        "pages": "[5, 6, 7, 8]"
+      },
+      {
+        "source": "Why Do Coffee Shops Fail",
+        "pages": "[1, 2, 3, 4, 5]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[6, 7]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[4, 5]"
+      },
+      {
+        "source": "How to Increase Your Coffee Shop Profits with Loyalty Programs",
+        "pages": "[15, 16, 17]"
+      },
+      {
+        "source": "7 Ways To Run A More Efficient Coffee Shop",
+        "pages": "[6, 7, 8]"
+      }
+    ],
+    "recall": {
+      "applicable": true,
+      "source_full": true,
+      "pages_full": true,
+      "partial": 1.0,
+      "per_source": [
+        {
+          "source": "7 Costs That Sink Coffee Shops",
+          "wanted_pages": [
+            8,
+            9,
+            10,
+            11
+          ],
+          "source_hit": true,
+          "page_hit": true
+        }
+      ]
+    },
+    "verdict": "EQUIVALENT",
+    "actual_answer": "**Employee Giveaways** is covered on **pages 8–11** of *7 Costs That Sink Coffee Shops*.\n\n**Core idea:** When employees give away free drinks and food to friends and family, it creates a double loss — lost inventory *and* lost sales. The document likens unchecked giveaways to \"death by a thousand tiny cuts.\" The recommended fix is to set a clear free-drink policy (e.g., two complimentary drinks per shift), strictly prohibit unapproved giveaways, use your POS system to track comped items, and consider offering a discounted \"family\" price (such as 40% off) instead of fully free products.",
+    "expected_answer": "Employee Giveaways is covered on pages 8-11 of 7 Costs That Sink Coffee Shops. Core idea: employees giving free drinks/food to friends and family creates a 'double-dipping of losses' — loss of inventory plus loss of sales."
+  },
+  {
+    "id": "h04",
+    "question": "Which page of the Calculating Your Break Even Point document contains the worked example with concrete numbers?",
+    "question_type": "page_lookup",
+    "must_cite_sources": [
+      {
+        "source": "Calculating Your Break Even Point",
+        "pages": [
+          2,
+          3
+        ]
+      }
+    ],
+    "retrieved": [
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[4, 5]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "Calculating Your Break Even Point",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "Calculating Your Break Even Point",
+        "pages": "[4, 5]"
+      },
+      {
+        "source": "High-Level Strategic Roadmap - Transforming a Declining Coffee Shop…",
+        "pages": "[3]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[2, 3]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[1]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": "[4, 5, 6, 7, 8, 9, 10]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "High-Level Strategic Roadmap - Transforming a Declining Coffee Shop…",
+        "pages": "[4]"
+      }
+    ],
+    "recall": {
+      "applicable": true,
+      "source_full": true,
+      "pages_full": true,
+      "partial": 1.0,
+      "per_source": [
+        {
+          "source": "Calculating Your Break Even Point",
+          "wanted_pages": [
+            2,
+            3
+          ],
+          "source_hit": true,
+          "page_hit": true
+        }
+      ]
+    },
+    "verdict": "DIFFERENT",
+    "actual_answer": "The worked example with concrete numbers appears on **pages 4–5** of the *Calculating Your Break Even Point* document. That section includes:\n\n- **Cost breakdown for 1 Americano**: $0.50 (coffee) + $0.27 (cup, lid, & sleeve) = **$0.77 total cost**\n- **Sale price**: $2.75\n- **Margin**: $1.98\n\nIt also walks through the step-by-step break-even calculation method (adding up fixed, variable, and monthly startup costs, then dividing fixed costs by the sales margin).\n\nPages 1–3 of the same document also contain a **startup cost scenario** (e.g., $21,800 total startup costs, $10,000 borrowed at $350/month), but the fully worked single-item pricing example with the break-even formula application is on pages 4–5.",
+    "expected_answer": "Pages 2-3 contain the worked example: $7,200 monthly fixed costs (rent $2,000, insurance $300, loan $350, salary $4,200), $2,800 variable costs, $522 daily revenue."
+  },
+  {
+    "id": "h05",
+    "question": "Which pages of '5 KPIs' explain RevPASH and how it is calculated?",
+    "question_type": "page_lookup",
+    "must_cite_sources": [
+      {
+        "source": "5 KPIs Every Clever Café Manager Should Track",
+        "pages": [
+          4,
+          5
+        ]
+      }
+    ],
+    "retrieved": [
+      {
+        "source": "5 KPIs Every Clever Café Manager Should Track",
+        "pages": "[4, 5, 6]"
+      },
+      {
+        "source": "5 KPIs Every Clever Café Manager Should Track",
+        "pages": "[3, 4]"
+      },
+      {
+        "source": "High-Level Strategic Roadmap - Transforming a Declining Coffee Shop…",
+        "pages": "[2]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[1]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[3, 4]"
+      },
+      {
+        "source": "Student “How to Earn an A” One-Page Guide S26",
+        "pages": "[2, 3]"
+      },
+      {
+        "source": "High-Level Strategic Roadmap - Transforming a Declining Coffee Shop…",
+        "pages": "[3]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[2, 3]"
+      },
+      {
+        "source": "Student “How to Earn an A” One-Page Guide S26",
+        "pages": "[3, 4]"
+      }
+    ],
+    "recall": {
+      "applicable": true,
+      "source_full": true,
+      "pages_full": true,
+      "partial": 1.0,
+      "per_source": [
+        {
+          "source": "5 KPIs Every Clever Café Manager Should Track",
+          "wanted_pages": [
+            4,
+            5
+          ],
+          "source_hit": true,
+          "page_hit": true
+        }
+      ]
+    },
+    "verdict": "PARTIAL",
+    "actual_answer": "RevPASH (Revenue Per Available Seat Hour) is explained and its calculation is covered on **pages 3–6** of *5 KPIs Every Clever Café Manager Should Track*:\n\n- **Pages 3–4** introduce RevPASH as a KPI, explain its origin (developed by Dr Sheryl Kimes of Cornell University), and describe why it is useful — it incorporates time, capacity, and average check size into a single metric.\n- **Pages 4–6** provide the calculation formula and a worked example:\n\n  **RevPASH = Total Revenue ÷ Seat Hours**\n  where Seat Hours = Number of Seats × Hours Open.\n\n  Example: a 30-seat café open 12 hours has 360 seat hours; £3,000 revenue ÷ 360 = **£8.33 RevPASH**.\n\n  These pages also cover how to **improve** RevPASH during busy periods (raise prices, reduce meal duration, optimize seating, speed up order-to-kitchen flow) and during slow periods (attract more customers, increase average check size via specials, upselling, and entertainment).",
+    "expected_answer": "RevPASH (Revenue Per Available Seat Hour) is explained on pages 4-5. Calculated as Total Revenue / Seat Hours, where Seat Hours = Number of Seats × Hours Open."
+  },
+  {
+    "id": "h06",
+    "question": "On what page does '5 KPIs' first explicitly list 'Here are 5 KPIs every Clever Café manager should track'?",
+    "question_type": "page_lookup",
+    "must_cite_sources": [
+      {
+        "source": "5 KPIs Every Clever Café Manager Should Track",
+        "pages": [
+          2
+        ]
+      }
+    ],
+    "retrieved": [
+      {
+        "source": "5 KPIs Every Clever Café Manager Should Track",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "5 KPIs Every Clever Café Manager Should Track",
+        "pages": "[6, 7]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[3, 4]"
+      },
+      {
+        "source": "7 Ways To Run A More Efficient Coffee Shop",
+        "pages": "[9, 10]"
+      },
+      {
+        "source": "7 Costs That Sink Coffee Shops",
+        "pages": "[17, 18, 19]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[2, 3]"
+      },
+      {
+        "source": "7 Ways To Run A More Efficient Coffee Shop",
+        "pages": "[1, 2]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[6, 7]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[1]"
+      },
+      {
+        "source": "7 Costs That Sink Coffee Shops",
+        "pages": "[8, 9, 10, 11]"
+      }
+    ],
+    "recall": {
+      "applicable": true,
+      "source_full": true,
+      "pages_full": true,
+      "partial": 1.0,
+      "per_source": [
+        {
+          "source": "5 KPIs Every Clever Café Manager Should Track",
+          "wanted_pages": [
+            2
+          ],
+          "source_hit": true,
+          "page_hit": true
+        }
+      ]
+    },
+    "verdict": "DIFFERENT",
+    "actual_answer": "The phrase \"Here are 5 KPIs every Clever Café manager should track:\" first appears on **pages 1–2** of *5 KPIs Every Clever Café Manager Should Track* (the chunk covering pages [1, 2, 3]).",
+    "expected_answer": "The explicit '5 KPIs' framing appears on page 2 of the document, immediately followed by KPI #1 Employee Retention Rate."
+  },
+  {
+    "id": "h07",
+    "question": "Compare how the 'Briefing Doc - Opening and Operating a Profitable Coffee Shop' and 'Calculating Your Break Even Point' present the break-even calculation. What's the same and what's different?",
+    "question_type": "synthesis",
+    "must_cite_sources": [
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": [
+          4,
+          5
+        ]
+      },
+      {
+        "source": "Calculating Your Break Even Point",
+        "pages": [
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    ],
+    "retrieved": [
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[4, 5]"
+      },
+      {
+        "source": "Calculating Your Break Even Point",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "Why Do Coffee Shops Fail",
+        "pages": "[24, 25]"
+      },
+      {
+        "source": "Calculating Your Break Even Point",
+        "pages": "[4, 5]"
+      },
+      {
+        "source": "How to improve sales and profitabiity for your coffe shop",
+        "pages": "[1, 2]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": "[4, 5, 6, 7, 8, 9, 10]"
+      },
+      {
+        "source": "Why Do Coffee Shops Fail",
+        "pages": "[5, 6, 7, 8]"
+      },
+      {
+        "source": "How to improve sales and profitabiity for your coffe shop",
+        "pages": "[4, 5, 6]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": "[1, 2, 3]"
+      }
+    ],
+    "recall": {
+      "applicable": true,
+      "source_full": true,
+      "pages_full": true,
+      "partial": 1.0,
+      "per_source": [
+        {
+          "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+          "wanted_pages": [
+            4,
+            5
+          ],
+          "source_hit": true,
+          "page_hit": true
+        },
+        {
+          "source": "Calculating Your Break Even Point",
+          "wanted_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_hit": true,
+          "page_hit": true
+        }
+      ]
+    },
+    "verdict": "EQUIVALENT",
+    "actual_answer": "## Comparison: Break-Even Calculation Across Both Documents\n\n### What's the Same\n\nBoth documents agree on the **core formula structure**: divide your fixed costs by a margin figure to get the sales dollars needed to break even. Both also agree that:\n\n- Fixed costs (rent, insurance, salaries) are the numerator.\n- Understanding your break-even point is essential for pricing decisions and financial health.\n- A POS system is recommended for collecting the data you need (Briefing Doc, page 5; Calculating, page 5).\n- The analysis should be revisited regularly, not just done once.\n\n### What's Different\n\n1. **Simplicity vs. nuance.** The Briefing Doc (pages 4-5) presents a clean, single formula — `Fixed Costs / Gross Margin %` — with one tidy example ($22,000 / 0.85 = $26,000). It treats the calculation as essentially solved in two lines. The Calculating document (pages 1-5) spends significant time on the *ambiguity* of what counts: should you include startup costs (the $10,000 loan) or only operational costs? It explicitly warns that excluding startup debt \"may give you a false sense of profit\" (page 3).\n\n2. **Scope of costs.** The Briefing Doc ignores startup costs entirely. The Calculating document (pages 3-4) walks through a full startup scenario (Legal $300, Equipment $12,000, Buildout $4,500, etc., totaling $21,800) and shows how to fold the monthly loan payment ($350) into the break-even math.\n\n3. **Per-item analysis.** The Calculating document (pages 4-5) adds a **per-menu-item** break-even approach — breaking down an Americano at $0.77 cost vs. $2.75 sale price for a $1.98 margin — and notes this is useful for pricing strategy. The Briefing Doc doesn't go to the individual-item level at all.\n\n4. **Levers for improvement.** The Calculating document (page 4) explicitly names two levers once you know your break-even: increase transactions (more customers) or increase average receipt price (upselling/raising prices). The Briefing Doc mentions these strategies elsewhere but doesn't connect them directly to the break-even formula.\n\n### In Short\n\nThe Briefing Doc gives you the **formula and a quick example** — useful as a reference card. The Calculating document gives you the **thinking behind the formula** — when to include startup costs, how to break it down per item, and what to do once you have the number. They complement each other: one is the summary, the other is the tutorial.",
+    "expected_answer": "Both define break-even as the sales level where total costs are covered. The Briefing Doc gives a simple formula: Fixed Costs / Gross Margin %, with example $22,000 / 0.85 = $26,000. Calculating Your Break Even Point gives a more detailed multi-step method: amortize startup costs, sum monthly fixed and variable costs, then Fixed Costs / Sales Margin where Sales Margin = Gross Sales Revenue − Variable Costs. Worked example uses $7,200 fixed + $2,800 variable = $10,000 monthly cost vs ~$522/day revenue."
+  },
+  {
+    "id": "h08",
+    "question": "How do the '5 KPIs Every Clever Café Manager Should Track' and 'Top Metrics to Track to Measure Your Coffee Shop Franchise's Performance' differ in what they recommend tracking?",
+    "question_type": "synthesis",
+    "must_cite_sources": [
+      {
+        "source": "5 KPIs Every Clever Café Manager Should Track",
+        "pages": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "source": "Top Metrics to Track to Measure Your Coffee Shop Franchise’s Performance",
+        "pages": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    ],
+    "retrieved": [
+      {
+        "source": "5 KPIs Every Clever Café Manager Should Track",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "Top Metrics to Track to Measure Your Coffee Shop Franchise’s Performance",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[3, 4]"
+      },
+      {
+        "source": "Top Metrics to Track to Measure Your Coffee Shop Franchise’s Performance",
+        "pages": "[3, 4, 5, 6]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[6, 7]"
+      },
+      {
+        "source": "5 KPIs Every Clever Café Manager Should Track",
+        "pages": "[6, 7]"
+      },
+      {
+        "source": "7 Ways To Run A More Efficient Coffee Shop",
+        "pages": "[9, 10]"
+      },
+      {
+        "source": "7 Costs That Sink Coffee Shops",
+        "pages": "[17, 18, 19]"
+      },
+      {
+        "source": "7 Ways To Run A More Efficient Coffee Shop",
+        "pages": "[1, 2]"
+      },
+      {
+        "source": "7 Costs That Sink Coffee Shops",
+        "pages": "[1, 2, 3, 4, 5]"
+      }
+    ],
+    "recall": {
+      "applicable": true,
+      "source_full": true,
+      "pages_full": true,
+      "partial": 1.0,
+      "per_source": [
+        {
+          "source": "5 KPIs Every Clever Café Manager Should Track",
+          "wanted_pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "source_hit": true,
+          "page_hit": true
+        },
+        {
+          "source": "Top Metrics to Track to Measure Your Coffee Shop Franchise’s Performance",
+          "wanted_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_hit": true,
+          "page_hit": true
+        }
+      ]
+    },
+    "verdict": "PARTIAL",
+    "actual_answer": "## Comparison of Recommended KPIs\n\nThe two documents take notably different approaches:\n\n**\"5 KPIs Every Clever Café Manager Should Track\"** focuses on **staff-centric and operational metrics** aimed at independent café managers:\n\n1. **Employee Retention Rate** — percentage of staff who stay over a given period, emphasizing the cost of turnover and hiring the wrong people (pages 1–2)\n2. **Labour Cost Percentage (SpLH)** — sales made during a period divided by total labour cost, highlighting that even a 1% difference can mean profit vs. loss (pages 6–7)\n3. **Revenue by Employee** — also called sales per head or average ticket size, tracked at different dayparts (lunch, dinner) to spot trends (pages 6–7)\n\n(KPIs #2 and #5 fall on pages not included in the provided context.)\n\n**\"Top Metrics to Track to Measure Your Coffee Shop Franchise's Performance\"** (PJ's Coffee) takes a **franchise/systems-oriented approach**:\n\n- **Cost of Goods** — cost to make each menu item, used to adjust inventory and pricing (pages 1–2)\n- **Labor Percentages** — labor divided by sales, framed around staffing levels by daypart (pages 1–2)\n- **Top-Line Sales** — gross sales before deducting prime costs, analyzed alongside bottom-line sales for operational efficiency (pages 2–3)\n- **Customer Loyalty** — loyalty program participation as a proxy for customer engagement and sales growth (pages 3–4)\n- **Inventory variance tools** — theoretical vs. actual costs tracked through management systems (pages 3–4)\n\n### Key Differences\n\n| Dimension | 5 KPIs (Clever Café) | Top Metrics (PJ's Coffee) |\n|---|---|---|\n| **Audience** | Independent café managers | Franchise owners |\n| **Focus** | People-heavy (retention, revenue per employee) | Financial-heavy (COGS, top-line sales, margins) |\n| **Customer metrics** | Not prominent in available pages | Customer loyalty/program participation is a core KPI |\n| **Systems emphasis** | Minimal — calculation formulas given | Strong — inventory control and labor management tools are integral to the KPI framework (pages 3–4) |\n| **Labor** | Both track it, but Clever Café adds *retention* as a separate KPI | Labor is bundled with COGS and sales as part of \"prime costs\" |\n\nIn short, the Clever Café piece treats **employee management as the central lever** (3 of its visible 5 KPIs are people-related), while PJ's Coffee frames KPIs around **financial controls and systems** that enable franchise-scale consistency, with customer loyalty as the outward-facing metric.",
+    "expected_answer": "5 KPIs is operations-focused for a single café manager: Employee Retention, RevPASH, Labour Cost %, Revenue per Employee, Table Turn Time. Top Metrics (PJ's Coffee) is franchise-focused on financial KPIs: COGs, Labor Percentages, Top-Line Sales, plus customer metrics like Loyalty System Participation. The 5 KPIs piece emphasizes seat-hour efficiency and table turns; the franchise piece emphasizes inventory-control and labor-management systems."
+  },
+  {
+    "id": "h09",
+    "question": "Which cost categories appear in BOTH '7 Costs That Sink Coffee Shops' and 'How to Determine the Cost of Selling 100 Coffees'? Where do they overlap?",
+    "question_type": "synthesis",
+    "must_cite_sources": [
+      {
+        "source": "7 Costs That Sink Coffee Shops",
+        "pages": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "source": "How to Determine the Cost of Selling 100 Coffees",
+        "pages": [
+          3,
+          4,
+          5,
+          6
+        ]
+      }
+    ],
+    "retrieved": [
+      {
+        "source": "How to Determine the Cost of Selling 100 Coffees",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "Calculating Your Break Even Point",
+        "pages": "[4, 5]"
+      },
+      {
+        "source": "How to Determine the Cost of Selling 100 Coffees",
+        "pages": "[3, 4, 5, 6]"
+      },
+      {
+        "source": "7 Costs That Sink Coffee Shops",
+        "pages": "[1, 2, 3, 4, 5]"
+      },
+      {
+        "source": "7 Costs That Sink Coffee Shops",
+        "pages": "[19, 20, 21]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[6, 7]"
+      },
+      {
+        "source": "Calculating Your Break Even Point",
+        "pages": "[2, 3, 4]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[4, 5]"
+      },
+      {
+        "source": "Why Do Coffee Shops Fail",
+        "pages": "[16, 17, 18, 19]"
+      },
+      {
+        "source": "Why Do Coffee Shops Fail",
+        "pages": "[24, 25]"
+      }
+    ],
+    "recall": {
+      "applicable": true,
+      "source_full": true,
+      "pages_full": true,
+      "partial": 1.0,
+      "per_source": [
+        {
+          "source": "7 Costs That Sink Coffee Shops",
+          "wanted_pages": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "source_hit": true,
+          "page_hit": true
+        },
+        {
+          "source": "How to Determine the Cost of Selling 100 Coffees",
+          "wanted_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "source_hit": true,
+          "page_hit": true
+        }
+      ]
+    },
+    "verdict": "EQUIVALENT",
+    "actual_answer": "## Overlapping Cost Categories\n\n**1. Labor Costs**\n- *\"7 Costs\"* highlights **over-scheduling baristas** as potentially the highest operational cost, warning that even one extra barista per shift adds thousands in annual costs (pages 2–3).\n- *\"100 Coffees\"* lists **labor costs** as part of COGS and as a variable operational cost ($1,200/month in the break-even example) (pages 1–2, 3).\n\n**2. Waste**\n- *\"7 Costs\"* names **avoidable coffee shop waste** as one of the seven sinking costs (page 19).\n- *\"100 Coffees\"* quantifies waste concretely: ~2 grams lost per shot when tamping/dosing, plus 4–6 \"dial-in\" shots each morning — amounting to over 2 full drinks of wasted coffee per pound (pages 5–6).\n\n**3. Inventory / Supplies (COGS)**\n- *\"7 Costs\"* lists **coffee shop inventory management** as a major cost that sinks shops (page 19).\n- *\"100 Coffees\"* breaks down the same category item-by-item: coffee beans, milk, cups, lids, sleeves, syrups, stirrers (pages 1–3), and prices coffee at $12/lb wholesale with yield calculations (pages 5–6).\n\n**4. Equipment**\n- *\"7 Costs\"* warns about **lack of proper equipment maintenance** draining profits (page 19).\n- *\"100 Coffees\"* notes that equipment costs factor into the full cost picture and break-even analysis, though they are excluded from the per-cup COGS calculation (page 4).\n\n## Where They Diverge\n\n\"7 Costs\" covers overhead-level threats unique to its article — **employee giveaways, ineffective marketing, and the cost of time** (owner's opportunity cost) — none of which appear in \"100 Coffees.\" Conversely, \"100 Coffees\" dives into **per-unit micro-costs** (e.g., $0.27 for a cup/lid/sleeve, $0.50 for coffee per Americano, page 4) that \"7 Costs\" never addresses at that granularity.\n\nIn short, the two documents overlap on **labor, waste, inventory, and equipment** but approach them from opposite ends: one warns about macro-level cost creep, the other builds up unit economics from the bottom.",
+    "expected_answer": "Overlap is in inventory/COGS: '7 Costs' lists Coffee Shop Inventory Management (perishables, stockouts) and Avoidable Waste; 'How to Determine...' breaks down the per-cup ingredient costs (coffee $0.50, cup+lid $0.24, water $0.05). Labor also overlaps: '7 Costs' has Over-Scheduling Baristas; the cost-per-cup doc notes labor is excluded from COGS but still must be subtracted to compute true profit."
+  },
+  {
+    "id": "h10",
+    "question": "How does the High-Level Strategic Roadmap relate to the Business Plan Assumptions? Which document drives the financial projections?",
+    "question_type": "synthesis",
+    "must_cite_sources": [
+      {
+        "source": "High-Level Strategic Roadmap - Transforming a Declining Coffee Shop…",
+        "pages": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "source": "Business Plan Assumptions S26",
+        "pages": [
+          1,
+          2
+        ]
+      }
+    ],
+    "retrieved": [
+      {
+        "source": "High-Level Strategic Roadmap - Transforming a Declining Coffee Shop…",
+        "pages": "[1]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[6, 7]"
+      },
+      {
+        "source": "Business Plan Assumptions S26",
+        "pages": "[1, 2]"
+      },
+      {
+        "source": "Finalist Team Presentation Judging Rubric S26",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "High-Level Strategic Roadmap - Transforming a Declining Coffee Shop…",
+        "pages": "[4]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[1]"
+      },
+      {
+        "source": "Student “How to Earn an A” One-Page Guide S26",
+        "pages": "[3, 4]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[2, 3]"
+      },
+      {
+        "source": "Finalist Team Presentation Judging Rubric S26",
+        "pages": "[3]"
+      }
+    ],
+    "recall": {
+      "applicable": true,
+      "source_full": true,
+      "pages_full": true,
+      "partial": 1.0,
+      "per_source": [
+        {
+          "source": "High-Level Strategic Roadmap - Transforming a Declining Coffee Shop…",
+          "wanted_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "source_hit": true,
+          "page_hit": true
+        },
+        {
+          "source": "Business Plan Assumptions S26",
+          "wanted_pages": [
+            1,
+            2
+          ],
+          "source_hit": true,
+          "page_hit": true
+        }
+      ]
+    },
+    "verdict": "EQUIVALENT",
+    "actual_answer": "## Relationship Between the Strategic Roadmap and Business Plan Assumptions\n\nThe two documents work as a **strategy-then-numbers** pair:\n\n1. **The High-Level Strategic Roadmap** (page 1) sets the *qualitative direction* — it identifies the five key challenges (declining sales, operational inefficiencies, limited digital presence, competitive pressure, customer retention) and lays out the modernization initiatives (POS upgrade, mobile ordering, loyalty programs, automation, sustainable sourcing). It also defines the success targets, such as the KPI table on page 4: 80% digital transaction adoption, 50% loyalty growth, 20% higher foot traffic in Year 1, and a **30% profitability increase within three years**.\n\n2. **The Business Plan Assumptions** (pages 1–2) translates that strategy into *concrete financial inputs*. It specifies:\n   - A **10% declining revenue** for 2023–2025 as the pre-modernization baseline\n   - A **5% annual cash flow decline** for the same period\n   - Fixed monthly operating expenses (G&A $1,000, maintenance $500, marketing $200, insurance $200, legal $500)\n   - Staff costs at **25–40% of net sales**, 8 part-time employees\n   - Balance sheet assumptions for Dec 31, 2025 ($22,000 cash, $10,000 inventory, $4,000 AR, $20,000 AP, $16,000 notes payable)\n   - A modernization start date of **January 1, 2026**\n\n**The Business Plan Assumptions document drives the financial projections.** It provides the specific numbers, cost structures, and balance sheet starting points that teams must use to build their 5-year forecast (monthly for 2026, annually for 2027–2030). The Roadmap tells you *what* to do and *why*; the Assumptions document tells you *with what numbers* to model it. As the Assumptions document states, \"it is your responsibility to derive year-end profit for fiscal year 2025\" and produce \"a 5-year financial forecast\" based on its given figures (Business Plan Assumptions, pages 1–2).\n\nThe Financial Model User Guide (page 1) confirms this flow: students should start with the Assumptions (\"Replace every blue input with your assumptions\"), then build the historical decline story, then forecast the modernization impact — connecting the Roadmap's strategic initiatives to the Assumptions' financial baseline.",
+    "expected_answer": "The Strategic Roadmap defines three phases (Foundation, Integration, Optimization) and the operational KPIs that should improve in each phase. Business Plan Assumptions provides the concrete numeric baseline (2023 revenue, COGS %, labor %, growth rates) that the financial model uses. Roadmap is the qualitative plan; Assumptions is the quantitative input — and the Financial Model Template applies the Assumptions over the Roadmap timeline."
+  },
+  {
+    "id": "h11",
+    "question": "Both 'How to Increase Your Coffee Shop Profits with Loyalty Programs' and 'How To Understand Your Customers And Their Needs With The Right Data' touch on customer engagement. What is each document's distinct angle?",
+    "question_type": "synthesis",
+    "must_cite_sources": [
+      {
+        "source": "How to Increase Your Coffee Shop Profits with Loyalty Programs",
+        "pages": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "source": "How To Understand Your Customers And Their Needs With The Right Data",
+        "pages": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    ],
+    "retrieved": [
+      {
+        "source": "How to Increase Your Coffee Shop Profits with Loyalty Programs",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "How To Understand Your Customers And Their Needs With The Right Data",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "How to Increase Your Coffee Shop Profits with Loyalty Programs",
+        "pages": "[5, 6, 7]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[6, 7]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[5, 6]"
+      },
+      {
+        "source": "How to Beat Your Coffee Shop Competition",
+        "pages": "[7, 8, 9, 10]"
+      },
+      {
+        "source": "How to improve sales and profitabiity for your coffe shop",
+        "pages": "[6, 7]"
+      },
+      {
+        "source": "How to improve sales and profitabiity for your coffe shop",
+        "pages": "[2, 3, 4]"
+      },
+      {
+        "source": "How To Understand Your Customers And Their Needs With The Right Data",
+        "pages": "[3, 4, 5]"
+      },
+      {
+        "source": "How to Beat Your Coffee Shop Competition",
+        "pages": "[13, 14, 15, 16, 18]"
+      }
+    ],
+    "recall": {
+      "applicable": true,
+      "source_full": true,
+      "pages_full": true,
+      "partial": 1.0,
+      "per_source": [
+        {
+          "source": "How to Increase Your Coffee Shop Profits with Loyalty Programs",
+          "wanted_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "source_hit": true,
+          "page_hit": true
+        },
+        {
+          "source": "How To Understand Your Customers And Their Needs With The Right Data",
+          "wanted_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_hit": true,
+          "page_hit": true
+        }
+      ]
+    },
+    "verdict": "EQUIVALENT",
+    "actual_answer": "**\"How to Increase Your Coffee Shop Profits with Loyalty Programs\"** approaches customer engagement through **reward-based behavioral incentives**. Its focus is on using loyalty programs (punch cards, discounts, time-based promotions) to cultivate repeat customers, drive sales during slow hours, and build an ongoing relationship that extends beyond individual transactions. The core idea is that rewarding customers for returning solidifies habits and loyalty (pages 1-3, 5-7).\n\n**\"How To Understand Your Customers And Their Needs With The Right Data\"** approaches customer engagement through **data-driven understanding**. Its focus is on collecting and analyzing transactional, demographic, and attitudinal data to predict what customers want and deliver it more effectively. The core idea is that deeper insight into customer behavior — via POS data, sentiment analysis, and external datasets — is the competitive differentiator (pages 1-2, 3-5).\n\nIn short: the first document asks *\"how do we keep customers coming back?\"* (behavioral loyalty); the second asks *\"how do we know what customers actually need?\"* (analytical intelligence). They're complementary — loyalty programs generate the engagement data that the second document argues you should be analyzing.",
+    "expected_answer": "Loyalty Programs focuses on retention mechanics: program design, point/reward structures, frequency triggers, and how loyalty drives repeat visits and higher tickets. Understand Your Customers focuses on data capture and analysis: using POS, loyalty data, surveys, and observation to identify demographics, preferences, and buying patterns, then acting on insights. Loyalty is the lever; understanding-via-data is the diagnosis that tells you which lever to pull."
+  },
+  {
+    "id": "h12",
+    "question": "What is the 2023 baseline annual revenue figure for Broadway Cafe in the financial model?",
+    "question_type": "numeric",
+    "must_cite_sources": [
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": [
+          1,
+          2
+        ]
+      }
+    ],
+    "retrieved": [
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "BroadwayCafe Final Project Presentation",
+        "pages": "[1, 2, 3, 4]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[1]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": "[2, 3, 4, 5]"
+      },
+      {
+        "source": "Student “How to Earn an A” One-Page Guide S26",
+        "pages": "[1, 2]"
+      },
+      {
+        "source": "How to improve sales and profitabiity for your coffe shop",
+        "pages": "[1, 2]"
+      },
+      {
+        "source": "BroadwayCafe Final Project Presentation",
+        "pages": "[4, 5, 6, 7]"
+      },
+      {
+        "source": "How to improve sales and profitabiity for your coffe shop",
+        "pages": "[4, 5, 6]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[2, 3]"
+      },
+      {
+        "source": "Business Plan Assumptions S26",
+        "pages": "[1, 2]"
+      }
+    ],
+    "recall": {
+      "applicable": true,
+      "source_full": true,
+      "pages_full": true,
+      "partial": 1.0,
+      "per_source": [
+        {
+          "source": "Broadway_Cafe_Financial_Model_Template S26",
+          "wanted_pages": [
+            1,
+            2
+          ],
+          "source_hit": true,
+          "page_hit": true
+        }
+      ]
+    },
+    "verdict": "EQUIVALENT",
+    "actual_answer": "The 2023 baseline annual revenue for Broadway Café is **$720,000**.\n\nThis figure appears in multiple places:\n- **Inputs tab** (Broadway_Cafe_Financial_Model_Template S26, page 1): \"2023 Revenue | $/year | 720000 | Starting historical revenue.\"\n- **Hist_2023_2025 tab** (page 3): The 2023 row shows Revenue of $720,000 as the \"Starting point.\"\n- **Business Plan Assumptions S26** (page 1): States teams should derive \"a 10 percent declining revenue for the last 3 years (23–25) before modernization,\" with the model using $720,000 as that starting point.",
+    "expected_answer": "$720,000 in 2023 baseline revenue."
+  },
+  {
+    "id": "h13",
+    "question": "What is the projected COGS percentage for Broadway Cafe in 2026, and what does it improve to by 2030?",
+    "question_type": "numeric",
+    "must_cite_sources": [
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": [
+          1,
+          2
+        ]
+      }
+    ],
+    "retrieved": [
+      {
+        "source": "BroadwayCafe Final Project Presentation",
+        "pages": "[1, 2, 3, 4]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[1]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": "[4, 5, 6, 7, 8, 9, 10]"
+      },
+      {
+        "source": "Student “How to Earn an A” One-Page Guide S26",
+        "pages": "[1, 2]"
+      },
+      {
+        "source": "How to improve sales and profitabiity for your coffe shop",
+        "pages": "[1, 2]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[6, 7]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[2, 3]"
+      },
+      {
+        "source": "BroadwayCafe Final Project Presentation",
+        "pages": "[8, 9, 10, 11]"
+      },
+      {
+        "source": "How to improve sales and profitabiity for your coffe shop",
+        "pages": "[4, 5, 6]"
+      }
+    ],
+    "recall": {
+      "applicable": true,
+      "source_full": true,
+      "pages_full": true,
+      "partial": 1.0,
+      "per_source": [
+        {
+          "source": "Broadway_Cafe_Financial_Model_Template S26",
+          "wanted_pages": [
+            1,
+            2
+          ],
+          "source_hit": true,
+          "page_hit": true
+        }
+      ]
+    },
+    "verdict": "EQUIVALENT",
+    "actual_answer": "Based on the financial model's **Inputs** sheet (Broadway_Cafe_Financial_Model_Template S26, page 2):\n\n- **2026 COGS %: 32.5%** — improvement attributed to \"lower waste / better purchasing\"\n- **2030 COGS %: 30.5%**\n\nThe full COGS % trajectory is:\n\n| Year | COGS % |\n|------|--------|\n| 2025 (baseline) | 34.0% |\n| 2026 | 32.5% |\n| 2027 | 32.0% |\n| 2028 | 31.5% |\n| 2029 | 31.0% |\n| 2030 | 30.5% |\n\nThis represents a **3.5 percentage point improvement** over five years, driven by better inventory visibility, reduced waste, and improved purchasing discipline — consistent with the model's principle that financial improvement must be tied to specific process and system changes (Broadway_Cafe_Financial_Model_User_Guide, page 1).",
+    "expected_answer": "COGS is 32.5% in 2026 and improves year-over-year to 30.5% by 2030."
+  },
+  {
+    "id": "h14",
+    "question": "In the 'How to Determine the Cost of Selling 100 Coffees' document, what is the total per-cup cost of an Americano (espresso + cup/lid + water)?",
+    "question_type": "numeric",
+    "must_cite_sources": [
+      {
+        "source": "How to Determine the Cost of Selling 100 Coffees",
+        "pages": [
+          6,
+          7
+        ]
+      }
+    ],
+    "retrieved": [
+      {
+        "source": "How to Determine the Cost of Selling 100 Coffees",
+        "pages": "[6, 7, 8, 9]"
+      },
+      {
+        "source": "Calculating Your Break Even Point",
+        "pages": "[4, 5]"
+      },
+      {
+        "source": "How to Determine the Cost of Selling 100 Coffees",
+        "pages": "[3, 4, 5, 6]"
+      },
+      {
+        "source": "How to Increase Your Coffee Shop Profits with Loyalty Programs",
+        "pages": "[8, 9]"
+      },
+      {
+        "source": "Calculating Your Break Even Point",
+        "pages": "[2, 3, 4]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[6, 7]"
+      },
+      {
+        "source": "How to Increase Your Coffee Shop Profits with Loyalty Programs",
+        "pages": "[9, 10, 11]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": "[4, 5, 6, 7, 8, 9, 10]"
+      },
+      {
+        "source": "7 Costs That Sink Coffee Shops",
+        "pages": "[6, 7, 8]"
+      }
+    ],
+    "recall": {
+      "applicable": true,
+      "source_full": true,
+      "pages_full": true,
+      "partial": 1.0,
+      "per_source": [
+        {
+          "source": "How to Determine the Cost of Selling 100 Coffees",
+          "wanted_pages": [
+            6,
+            7
+          ],
+          "source_hit": true,
+          "page_hit": true
+        }
+      ]
+    },
+    "verdict": "EQUIVALENT",
+    "actual_answer": "The total per-cup cost of an Americano is **$0.79**, broken down as follows (pages 6–8):\n\n- **Espresso (coffee beans):** $0.50\n- **Cup and lid:** $0.24\n- **Water:** $0.05\n\n> *\"($0.50 for Coffee) + ($0.24 for a paper cup and lid) + ($0.05 for Water) = $0.79. The total cost of your single double-shot Americano is .79 cents.\"* (page 8)",
+    "expected_answer": "$0.79 per Americano, broken down as $0.50 espresso + $0.24 cup and lid + $0.05 water."
+  },
+  {
+    "id": "h15",
+    "question": "In the worked example in 'Calculating Your Break Even Point', what are the monthly fixed costs and the projected daily revenue?",
+    "question_type": "numeric",
+    "must_cite_sources": [
+      {
+        "source": "Calculating Your Break Even Point",
+        "pages": [
+          2,
+          3
+        ]
+      }
+    ],
+    "retrieved": [
+      {
+        "source": "Calculating Your Break Even Point",
+        "pages": "[2, 3, 4]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[4, 5]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "Calculating Your Break Even Point",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": "[4, 5, 6, 7, 8, 9, 10]"
+      },
+      {
+        "source": "How to Determine the Cost of Selling 100 Coffees",
+        "pages": "[14, 15, 16, 17]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[1]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[2, 3]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "How to Determine the Cost of Selling 100 Coffees",
+        "pages": "[9, 10, 11]"
+      }
+    ],
+    "recall": {
+      "applicable": true,
+      "source_full": true,
+      "pages_full": true,
+      "partial": 1.0,
+      "per_source": [
+        {
+          "source": "Calculating Your Break Even Point",
+          "wanted_pages": [
+            2,
+            3
+          ],
+          "source_hit": true,
+          "page_hit": true
+        }
+      ]
+    },
+    "verdict": "EQUIVALENT",
+    "actual_answer": "Based on the document **\"Calculating Your Break Even Point\"** (pages 2–3):\n\n- **Monthly fixed costs: $7,200** — broken down as:\n  - Rent: $2,000\n  - Insurance: $300\n  - Loan & Interest: $350\n  - Fixed Salary: $4,200\n  - *(Daily fixed cost: $240)*\n\n- **Projected daily revenue: $522** — calculated as:\n  - $4.35 (average sale) × 12 (transactions/hour) × 10 (hours) = **$522 gross revenue per day**\n  - Monthly: $522 × 30 = $15,660\n\nAfter subtracting total daily costs ($333 = $240 fixed + $93 variable), the example shows a **net daily revenue of $208** (page 3).",
+    "expected_answer": "Monthly fixed costs are $7,200 (rent $2,000 + insurance $300 + loan $350 + salary $4,200). Projected daily revenue is $522 (12 transactions per hour × 10 hours × $4.35 average ticket)."
+  },
+  {
+    "id": "h16",
+    "question": "How much funding does the Broadway Cafe financial model request in total?",
+    "question_type": "numeric",
+    "must_cite_sources": [
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": [
+          7,
+          8,
+          9
+        ]
+      }
+    ],
+    "retrieved": [
+      {
+        "source": "BroadwayCafe Final Project Presentation",
+        "pages": "[1, 2, 3, 4]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "Student “How to Earn an A” One-Page Guide S26",
+        "pages": "[1, 2]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[1]"
+      },
+      {
+        "source": "How to improve sales and profitabiity for your coffe shop",
+        "pages": "[1, 2]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": "[9, 10, 11, 12, 13, 14]"
+      },
+      {
+        "source": "How to improve sales and profitabiity for your coffe shop",
+        "pages": "[4, 5, 6]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[3]"
+      },
+      {
+        "source": "BroadwayCafe Final Project Presentation",
+        "pages": "[8, 9, 10, 11]"
+      },
+      {
+        "source": "Student “How to Earn an A” One-Page Guide S26",
+        "pages": "[2, 3]"
+      }
+    ],
+    "recall": {
+      "applicable": true,
+      "source_full": true,
+      "pages_full": true,
+      "partial": 1.0,
+      "per_source": [
+        {
+          "source": "Broadway_Cafe_Financial_Model_Template S26",
+          "wanted_pages": [
+            7,
+            8,
+            9
+          ],
+          "source_hit": true,
+          "page_hit": true
+        }
+      ]
+    },
+    "verdict": "EQUIVALENT",
+    "actual_answer": "The Broadway Café financial model requests **$57,000** in total funding (Broadway_Cafe_Financial_Model_Template S26, Funding_Request sheet, page ~10).\n\nThis is broken down into seven investment areas across two phases:\n\n- **Foundation phase ($42,000):** Data cleanup ($5,000), POS/payment upgrade ($12,000), ERP/integration ($15,000), Cybersecurity/wireless ($6,000), Training/change management ($4,000)\n- **Optimization phase ($15,000):** Loyalty/CRM/mobile coupons ($8,000), AI/forecasting/personalization ($7,000)\n\nNote: The template states these amounts are **placeholders to demonstrate structure** and should be replaced with the team's own assumptions.",
+    "expected_answer": "$57,000 total funding request, allocated across seven investment areas (POS upgrade, ERP/integration, loyalty/CRM, cybersecurity, training, data cleanup, AI/forecasting)."
+  },
+  {
+    "id": "h17",
+    "question": "What does '7 Costs That Sink Coffee Shops' mean by 'The Cost of Time'?",
+    "question_type": "qa",
+    "must_cite_sources": [
+      {
+        "source": "7 Costs That Sink Coffee Shops",
+        "pages": [
+          15,
+          16
+        ]
+      }
+    ],
+    "retrieved": [
+      {
+        "source": "7 Costs That Sink Coffee Shops",
+        "pages": "[19, 20, 21]"
+      },
+      {
+        "source": "7 Costs That Sink Coffee Shops",
+        "pages": "[1, 2, 3, 4, 5]"
+      },
+      {
+        "source": "Why Do Coffee Shops Fail",
+        "pages": "[5, 6, 7, 8]"
+      },
+      {
+        "source": "Why Do Coffee Shops Fail",
+        "pages": "[1, 2, 3, 4, 5]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[6, 7]"
+      },
+      {
+        "source": "Calculating Your Break Even Point",
+        "pages": "[2, 3, 4]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "How to improve sales and profitabiity for your coffe shop",
+        "pages": "[4, 5, 6]"
+      },
+      {
+        "source": "How to improve sales and profitabiity for your coffe shop",
+        "pages": "[6, 7]"
+      },
+      {
+        "source": "Calculating Your Break Even Point",
+        "pages": "[1, 2, 3]"
+      }
+    ],
+    "recall": {
+      "applicable": true,
+      "source_full": true,
+      "pages_full": false,
+      "partial": 1.0,
+      "per_source": [
+        {
+          "source": "7 Costs That Sink Coffee Shops",
+          "wanted_pages": [
+            15,
+            16
+          ],
+          "source_hit": true,
+          "page_hit": false
+        }
+      ]
+    },
+    "verdict": "PARTIAL",
+    "actual_answer": "The document lists \"The cost of time\" as one of the seven business-threatening costs on pages 19–21 in the summary section. However, the detailed explanation for that specific cost is **not included in the provided context**. The context only contains the full discussion of \"Over-Scheduling Baristas\" (pages 1–5) and the summary list, but the section elaborating on \"The Cost of Time\" (likely found on intermediate pages) was not retrieved.\n\nBased on the broader themes across the documents, it likely refers to the hidden cost of an owner's own time — time spent on inefficient tasks, poor systems, or lack of planning that could otherwise be used to grow the business. The break-even and profitability documents (e.g., \"Calculating Your Break Even Point,\" pages 2–4) repeatedly stress that an owner's time has a dollar value (e.g., the $140/day personal salary example), and misusing it is a real financial loss.\n\nThat said, I cannot cite the exact explanation without the relevant pages from \"7 Costs That Sink Coffee Shops.\" You may want to query specifically for pages between 5–19 of that document for the full discussion.",
+    "expected_answer": "The Cost of Time refers to time the owner loses to issues with customers, vendors, and employees. This consumed time leads to inefficiency, poor decisions, and ultimately significant financial losses, even though it doesn't appear as a line-item cost."
+  },
+  {
+    "id": "h18",
+    "question": "What guidance does 'How to Revamp Your Coffee Shop Menu' give about menu length?",
+    "question_type": "qa",
+    "must_cite_sources": [
+      {
+        "source": "How to Revamp Your Coffee Shop Menu to Make More Profits",
+        "pages": [
+          6,
+          7,
+          9,
+          10
+        ]
+      }
+    ],
+    "retrieved": [
+      {
+        "source": "How to Revamp Your Coffee Shop Menu to Make More Profits",
+        "pages": "[9, 10, 11, 12]"
+      },
+      {
+        "source": "How to Revamp Your Coffee Shop Menu to Make More Profits",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "How to improve sales and profitabiity for your coffe shop",
+        "pages": "[2, 3, 4]"
+      },
+      {
+        "source": "How to Beat Your Coffee Shop Competition",
+        "pages": "[13, 14, 15, 16, 18]"
+      },
+      {
+        "source": "7 Costs That Sink Coffee Shops",
+        "pages": "[19, 20, 21]"
+      },
+      {
+        "source": "How to improve sales and profitabiity for your coffe shop",
+        "pages": "[9, 10, 11]"
+      },
+      {
+        "source": "How to Beat Your Coffee Shop Competition",
+        "pages": "[12, 13]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[3]"
+      },
+      {
+        "source": "7 Costs That Sink Coffee Shops",
+        "pages": "[6, 7, 8]"
+      }
+    ],
+    "recall": {
+      "applicable": true,
+      "source_full": true,
+      "pages_full": true,
+      "partial": 1.0,
+      "per_source": [
+        {
+          "source": "How to Revamp Your Coffee Shop Menu to Make More Profits",
+          "wanted_pages": [
+            6,
+            7,
+            9,
+            10
+          ],
+          "source_hit": true,
+          "page_hit": true
+        }
+      ]
+    },
+    "verdict": "EQUIVALENT",
+    "actual_answer": "Based on the document, **\"How to Revamp Your Coffee Shop Menu to Make More Profits\"** offers two key pieces of guidance on menu length:\n\n1. **Don't overwhelm customers with too many options** (pages 9-10): A long menu board makes it hard for first-time customers to choose, especially with a line building behind them. Under that pressure, most will default to a plain cup of coffee. Too many items create \"more confusion rather than satisfaction.\"\n\n2. **Don't make the menu too short either** (pages 10-11): Customers genuinely want choices. A minimal, coffee-only menu is acceptable, but you can still expand it smartly — for example, by adding seasonal or signature espresso drinks, offering higher-quality syrups, and providing several dairy-free options. These additions increase both customer options and price points.\n\nIn short, the document advocates for a **balanced menu** — enough variety to excite customers and drive higher ticket prices, but not so many items that decision-making becomes stressful.",
+    "expected_answer": "Avoid menus that are too long — too many options overwhelm customers (who default to just 'a cup of coffee'), increase inventory, and raise expenses. But don't make it too short either — customers want choices. The sweet spot is a focused core with a few seasonal or signature additions, dairy alternatives, and higher-quality syrup options to expand naturally."
+  },
+  {
+    "id": "h19",
+    "question": "What are the tiebreaker rules in the Finalist Team Presentation Judging Rubric?",
+    "question_type": "qa",
+    "must_cite_sources": [
+      {
+        "source": "Finalist Team Presentation Judging Rubric S26",
+        "pages": [
+          3
+        ]
+      }
+    ],
+    "retrieved": [
+      {
+        "source": "Finalist Team Presentation Judging Rubric S26",
+        "pages": "[3]"
+      },
+      {
+        "source": "Finalist Team Presentation Judging Rubric S26",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "Appendix X AI Use Disclosure Team-Level — Manager Judgment Required",
+        "pages": "[1]"
+      },
+      {
+        "source": "🤝 MIS 311 Team Accountability Checklist",
+        "pages": "[2]"
+      },
+      {
+        "source": "🤝 MIS 311 Team Accountability Checklist",
+        "pages": "[1, 2]"
+      },
+      {
+        "source": "Student “How to Earn an A” One-Page Guide S26",
+        "pages": "[2, 3]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[1]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[2, 3]"
+      },
+      {
+        "source": "Student “How to Earn an A” One-Page Guide S26",
+        "pages": "[1, 2]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": "[1, 2, 3]"
+      }
+    ],
+    "recall": {
+      "applicable": true,
+      "source_full": true,
+      "pages_full": true,
+      "partial": 1.0,
+      "per_source": [
+        {
+          "source": "Finalist Team Presentation Judging Rubric S26",
+          "wanted_pages": [
+            3
+          ],
+          "source_hit": true,
+          "page_hit": true
+        }
+      ]
+    },
+    "verdict": "EQUIVALENT",
+    "actual_answer": "According to the **Finalist Team Presentation Judging Rubric S26** (page 3), if two teams are tied on total score, the winner is determined by the following tiebreaker sequence:\n\n1. **Business Logic & Feasibility** — the higher score wins first\n2. **Systems Thinking & Integration** — used if still tied\n3. **Innovation & Differentiation** — used if still tied after the second tiebreaker\n\nThe rubric notes this approach \"rewards not only creativity, but also realistic execution and strong managerial thinking.\"",
+    "expected_answer": "If two teams tie on total score, the winner is determined by the higher score in Business Logic & Feasibility first, then Systems Thinking & Integration, then Innovation & Differentiation."
+  },
+  {
+    "id": "h20",
+    "question": "What does the MIS 311 Team Accountability Checklist recommend for managing internal team conflict?",
+    "question_type": "qa",
+    "must_cite_sources": [
+      {
+        "source": "🤝 MIS 311 Team Accountability Checklist",
+        "pages": [
+          1,
+          2
+        ]
+      }
+    ],
+    "retrieved": [
+      {
+        "source": "🤝 MIS 311 Team Accountability Checklist",
+        "pages": "[1, 2]"
+      },
+      {
+        "source": "🤝 MIS 311 Team Accountability Checklist",
+        "pages": "[2]"
+      },
+      {
+        "source": "Appendix X AI Use Disclosure Team-Level — Manager Judgment Required",
+        "pages": "[1]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[2, 3]"
+      },
+      {
+        "source": "When I Work Employee Scheduling and Time Tracking Software",
+        "pages": "[1]"
+      },
+      {
+        "source": "Finalist Team Presentation Judging Rubric S26",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "Top Metrics to Track to Measure Your Coffee Shop Franchise’s Performance",
+        "pages": "[3, 4, 5, 6]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[3]"
+      },
+      {
+        "source": "Finalist Team Presentation Judging Rubric S26",
+        "pages": "[3]"
+      },
+      {
+        "source": "When I Work Employee Scheduling and Time Tracking Software",
+        "pages": "[1]"
+      }
+    ],
+    "recall": {
+      "applicable": true,
+      "source_full": true,
+      "pages_full": true,
+      "partial": 1.0,
+      "per_source": [
+        {
+          "source": "🤝 MIS 311 Team Accountability Checklist",
+          "wanted_pages": [
+            1,
+            2
+          ],
+          "source_hit": true,
+          "page_hit": true
+        }
+      ]
+    },
+    "verdict": "EQUIVALENT",
+    "actual_answer": "The MIS 311 Team Accountability Checklist addresses internal team conflict through several recommendations across its sections:\n\n1. **Proactive planning (page 1):** Under \"Team Setup,\" teams should \"Decide how your team will handle problems before they happen\" — establishing conflict resolution norms early, before issues arise.\n\n2. **Communication norms (page 2):** Under \"Communication & Reliability,\" the checklist states: \"Respectful disagreement is encouraged; disengagement is not.\" It also advises: \"If you can't meet a deadline, flag it early\" and \"Missed work is addressed proactively, not silently ignored.\"\n\n3. **Early Warning Signs (page 2):** The checklist identifies red flags that require immediate action:\n   - One or more members repeatedly unprepared\n   - Work completed by the same people every time\n   - Missed deadlines or rushed submissions\n   - Communication going silent\n\n   The guidance is: **\"Address issues as a team early. If needed, escalate professionally.\"**\n\n4. **Peer Review as accountability (page 2):** The \"Peer Review Reality Check\" section encourages self-reflection before reviews (e.g., \"Did I contribute consistently — not just at the end?\"), reinforcing that \"Peer reviews are graded and matter.\"\n\nIn short, the checklist emphasizes **prevention** (set expectations early), **transparency** (flag problems, don't stay silent), **respectful directness** (disagree openly but constructively), and **professional escalation** as a last resort.",
+    "expected_answer": "The checklist recommends setting team norms upfront, addressing missed deliverables and attendance issues early through direct communication, escalating only when peer-to-peer resolution fails, and using peer evaluation to capture sustained accountability problems formally."
+  },
+  {
+    "id": "h21",
+    "question": "What KPIs does the High-Level Strategic Roadmap propose for the modernization phases?",
+    "question_type": "qa",
+    "must_cite_sources": [
+      {
+        "source": "High-Level Strategic Roadmap - Transforming a Declining Coffee Shop…",
+        "pages": [
+          3,
+          4
+        ]
+      }
+    ],
+    "retrieved": [
+      {
+        "source": "High-Level Strategic Roadmap - Transforming a Declining Coffee Shop…",
+        "pages": "[1]"
+      },
+      {
+        "source": "Student “How to Earn an A” One-Page Guide S26",
+        "pages": "[3, 4]"
+      },
+      {
+        "source": "High-Level Strategic Roadmap - Transforming a Declining Coffee Shop…",
+        "pages": "[4]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": "[9, 10, 11, 12, 13, 14]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[3]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[2, 3]"
+      },
+      {
+        "source": "Business Plan Assumptions S26",
+        "pages": "[1, 2]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "Appendix X AI Use Disclosure Team-Level — Manager Judgment Required",
+        "pages": "[1]"
+      },
+      {
+        "source": "Student “How to Earn an A” One-Page Guide S26",
+        "pages": "[2, 3]"
+      }
+    ],
+    "recall": {
+      "applicable": true,
+      "source_full": true,
+      "pages_full": true,
+      "partial": 1.0,
+      "per_source": [
+        {
+          "source": "High-Level Strategic Roadmap - Transforming a Declining Coffee Shop…",
+          "wanted_pages": [
+            3,
+            4
+          ],
+          "source_hit": true,
+          "page_hit": true
+        }
+      ]
+    },
+    "verdict": "PARTIAL",
+    "actual_answer": "Based on the **High-Level Strategic Roadmap** (page 4), the proposed KPIs are tied to Critical Success Factors (CSFs):\n\n| CSF | KPI |\n|---|---|\n| **Digital Adoption** | 80% of transactions via mobile & POS |\n| **Customer Retention** | 50% growth in loyalty program members |\n| **Sales Increase** | 20% higher foot traffic in Year 1 |\n| **Cost Reduction** | 10% decrease in operational waste |\n| **Profitability** | 30% increase within three years |\n\nThese five KPIs map directly to the roadmap's overarching goal of transforming the declining coffee shop into a profitable, technology-driven enterprise. The 30% profitability increase within three years serves as the headline target, while the others measure the operational drivers (digital adoption, retention, traffic, and waste reduction) that are expected to deliver that result.",
+    "expected_answer": "Inventory Turnover Ratio (reduces excess stock and waste), Order Fulfillment Speed (online and in-store service times), and Digital Adoption Rate (percentage of transactions via mobile and POS) — among others tied to phased modernization."
+  },
+  {
+    "id": "h22",
+    "question": "Do any of the materials discuss quantum computing applications for coffee shops?",
+    "question_type": "negative",
+    "must_cite_sources": [],
+    "retrieved": [
+      {
+        "source": "High-Level Strategic Roadmap - Transforming a Declining Coffee Shop…",
+        "pages": "[1]"
+      },
+      {
+        "source": "High-Level Strategic Roadmap - Transforming a Declining Coffee Shop…",
+        "pages": "[4]"
+      },
+      {
+        "source": "BroadwayCafe Final Project Presentation",
+        "pages": "[8, 9, 10, 11]"
+      },
+      {
+        "source": "How to Beat Your Coffee Shop Competition",
+        "pages": "[19]"
+      },
+      {
+        "source": "How to Revamp Your Coffee Shop Menu to Make More Profits",
+        "pages": "[3, 4, 5, 6, 7]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[5, 6]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "How to Beat Your Coffee Shop Competition",
+        "pages": "[7, 8, 9, 10]"
+      },
+      {
+        "source": "BroadwayCafe Final Project Presentation",
+        "pages": "[1, 2, 3, 4]"
+      },
+      {
+        "source": "How to Revamp Your Coffee Shop Menu to Make More Profits",
+        "pages": "[7, 8, 9]"
+      }
+    ],
+    "recall": {
+      "applicable": false,
+      "source_full": null,
+      "pages_full": null,
+      "partial": null,
+      "per_source": []
+    },
+    "verdict": "EQUIVALENT",
+    "actual_answer": "No, none of the provided materials discuss quantum computing applications for coffee shops. The documents cover topics such as strategic modernization (POS systems, mobile apps, loyalty programs), menu optimization, competition strategies, financial management, and general technology implementation — but quantum computing is not mentioned in any of them.",
+    "expected_answer": "No. None of the materials mention quantum computing in any context."
+  },
+  {
+    "id": "h23",
+    "question": "Is there any discussion of NFTs or cryptocurrency-based loyalty tokens in the materials?",
+    "question_type": "negative",
+    "must_cite_sources": [],
+    "retrieved": [
+      {
+        "source": "How to Increase Your Coffee Shop Profits with Loyalty Programs",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "How to Increase Your Coffee Shop Profits with Loyalty Programs",
+        "pages": "[15, 16, 17]"
+      },
+      {
+        "source": "High-Level Strategic Roadmap - Transforming a Declining Coffee Shop…",
+        "pages": "[1]"
+      },
+      {
+        "source": "7 Costs That Sink Coffee Shops",
+        "pages": "[8, 9, 10, 11]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": "[9, 10, 11, 12, 13, 14]"
+      },
+      {
+        "source": "BroadwayCafe Final Project Presentation",
+        "pages": "[8, 9, 10, 11]"
+      },
+      {
+        "source": "Student “How to Earn an A” One-Page Guide S26",
+        "pages": "[3, 4]"
+      },
+      {
+        "source": "High-Level Strategic Roadmap - Transforming a Declining Coffee Shop…",
+        "pages": "[3]"
+      },
+      {
+        "source": "BroadwayCafe Final Project Presentation",
+        "pages": "[4, 5, 6, 7]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": "[2, 3, 4, 5]"
+      }
+    ],
+    "recall": {
+      "applicable": false,
+      "source_full": null,
+      "pages_full": null,
+      "partial": null,
+      "per_source": []
+    },
+    "verdict": "EQUIVALENT",
+    "actual_answer": "No, there is no discussion of NFTs or cryptocurrency-based loyalty tokens anywhere in the provided materials. The loyalty program discussions focus exclusively on traditional approaches such as punch/stamp cards, digital POS-based loyalty programs (e.g., Square), and points-based reward systems (pages 1–3, 15–17 of the loyalty programs document; page 1 of the Strategic Roadmap). No blockchain, NFT, or crypto-based loyalty mechanisms are mentioned.",
+    "expected_answer": "No. The materials discuss loyalty programs and blockchain only in conventional terms (loyalty transparency, sourcing); NFTs and crypto-token loyalty are not mentioned."
+  },
+  {
+    "id": "h24",
+    "question": "Do any of the documents cover pizza delivery operations?",
+    "question_type": "negative",
+    "must_cite_sources": [],
+    "retrieved": [
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "Briefing Doc - Opening and Operating a Profitable Coffee Shop",
+        "pages": "[6, 7]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": "[4, 5, 6, 7, 8, 9, 10]"
+      },
+      {
+        "source": "Student “How to Earn an A” One-Page Guide S26",
+        "pages": "[1, 2]"
+      },
+      {
+        "source": "BroadwayCafe Final Project Presentation",
+        "pages": "[8, 9, 10, 11]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[1]"
+      },
+      {
+        "source": "BroadwayCafe Final Project Presentation",
+        "pages": "[4, 5, 6, 7]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_User_Guide",
+        "pages": "[2, 3]"
+      },
+      {
+        "source": "Broadway_Cafe_Financial_Model_Template S26",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "Student “How to Earn an A” One-Page Guide S26",
+        "pages": "[2, 3]"
+      }
+    ],
+    "recall": {
+      "applicable": false,
+      "source_full": null,
+      "pages_full": null,
+      "partial": null,
+      "per_source": []
+    },
+    "verdict": "EQUIVALENT",
+    "actual_answer": "No, none of the provided documents cover pizza delivery operations. The entire corpus focuses on **coffee shop** business planning and operations, specifically:\n\n- A briefing doc on opening and operating a profitable coffee shop\n- The Broadway Café financial model and user guide\n- A student grading guide for a café modernization business plan\n- A Broadway Café final project presentation\n\nThe only mention of delivery is a **DoorDash partnership** for the Broadway Café (pages 4–5 of the BroadwayCafe Final Project Presentation), which refers to delivering café products — not pizza.",
+    "expected_answer": "No. The corpus is exclusively coffee-shop focused; there is no discussion of pizza delivery operations."
+  },
+  {
+    "id": "h25",
+    "question": "Do the materials reference video game design principles applied to café customer engagement?",
+    "question_type": "negative",
+    "must_cite_sources": [],
+    "retrieved": [
+      {
+        "source": "BroadwayCafe Final Project Presentation",
+        "pages": "[4, 5, 6, 7]"
+      },
+      {
+        "source": "Student “How to Earn an A” One-Page Guide S26",
+        "pages": "[1, 2]"
+      },
+      {
+        "source": "High-Level Strategic Roadmap - Transforming a Declining Coffee Shop…",
+        "pages": "[1]"
+      },
+      {
+        "source": "BroadwayCafe Final Project Presentation",
+        "pages": "[8, 9, 10, 11]"
+      },
+      {
+        "source": "How to Beat Your Coffee Shop Competition",
+        "pages": "[13, 14, 15, 16, 18]"
+      },
+      {
+        "source": "5 KPIs Every Clever Café Manager Should Track",
+        "pages": "[1, 2, 3]"
+      },
+      {
+        "source": "How to Promote and Market Your Coffee Shop",
+        "pages": "[7, 8, 9]"
+      },
+      {
+        "source": "How to Beat Your Coffee Shop Competition",
+        "pages": "[7, 8, 9, 10]"
+      },
+      {
+        "source": "High-Level Strategic Roadmap - Transforming a Declining Coffee Shop…",
+        "pages": "[4]"
+      },
+      {
+        "source": "How to Promote and Market Your Coffee Shop",
+        "pages": "[12, 13]"
+      }
+    ],
+    "recall": {
+      "applicable": false,
+      "source_full": null,
+      "pages_full": null,
+      "partial": null,
+      "per_source": []
+    },
+    "verdict": "EQUIVALENT",
+    "actual_answer": "No, the provided materials do not reference video game design principles applied to café customer engagement. None of the documents mention gamification, video game mechanics, or video game design concepts in any context. The customer engagement strategies discussed focus on loyalty cards/programs, social media, community events, personalized offers, and in-person relationship building — but none frame these through a video game design lens.",
+    "expected_answer": "No. While some materials touch on gamification implicitly via loyalty mechanics, no document references video-game-design principles applied to café engagement."
+  }
+]
