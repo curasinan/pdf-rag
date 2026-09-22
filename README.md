@@ -31,6 +31,16 @@ Per-query flow:
 
 All chunks live in a single ChromaDB collection with `source` / `project` metadata, so per-document and per-project scoping is a filter, not a separate index.
 
+## Design decisions
+
+- **Hybrid, not pure-dense.** BM25 catches the exact terms (names, numbers, acronyms) that embeddings fuzz over; RRF fuses the two rankings without score normalization because it is rank-based.
+- **Cheap wide nets first, one expensive judge last.** The 50+50 candidate pulls cost milliseconds; the slow cross-encoder only ever sees 30 pairs. Measured: reranking rescues answers that fusion alone ranks just outside the window.
+- **One collection, metadata scoping.** Per-document and per-project filters instead of per-document indexes, so query latency does not grow with corpus size.
+- **Idempotent ingest.** Chunk IDs are content-addressed (`{project}::{source}::{sha1}`), so re-ingesting a file is a no-op and the same source can live in two projects.
+- **A single choke point for LLM calls.** `claude_bridge.py` owns backend choice, billing safety (the CLI backend strips `ANTHROPIC_API_KEY` so nothing is silently metered), and token accounting.
+- **Citations are verified, not trusted.** A fabrication check (cited page exists and matches) and a separate attribution check (cited chunk actually supports the claim) — the two are never conflated.
+- **Evaluation is part of the pipeline.** A frozen baseline, a regression gate, held-out questions never tuned on, and planted-defect probes for the LLM judges themselves.
+
 ## Installation
 
 ```
@@ -82,9 +92,7 @@ python eval/gate.py --current eval/results_hard.json --baseline eval/baseline.js
 | Generation | `claude_bridge.py`, `prompts.py` |
 | Citation checks | `citations.py`, `citation_support.py`, `groundedness.py` |
 | Eval harness | `eval/`, `tools/` |
-| Deep documentation | `CLAUDE.md`, `HISTORY.md`, `EVAL_NOTES.md`, `ABLATION_NOTES.md`, `ABLATION_WRITEUP.md` |
-
-Design history and the reasoning behind every constraint live in `CLAUDE.md` (project memory) and `HISTORY.md`.
+| Documentation | `FULL_PICTURE.md` (what/why + project history), `ABLATION_WRITEUP.md` (retrieval-strategy study) |
 
 ## Notes
 

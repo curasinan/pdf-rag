@@ -14,19 +14,19 @@ Use it when:
 
 ## How it works
 
-One ChromaDB collection (BGE-M3, 1024-dim) plus a BM25 keyword index over the same chunks. A query runs both searches (50 candidates each, optionally a third HyDE channel), merges them with Reciprocal Rank Fusion (k=60), reranks the top 30 with a cross-encoder, and hands the top 10 chunks to Claude with a task-specific prompt. Citations are then checked twice: for fabrication (does the cited page exist and match?) and for attribution (does the cited chunk actually support the claim?). See `README.md` for commands and `CLAUDE.md` for the module-by-module reference.
+One ChromaDB collection (BGE-M3, 1024-dim) plus a BM25 keyword index over the same chunks. A query runs both searches (50 candidates each, optionally a third HyDE channel), merges them with Reciprocal Rank Fusion (k=60), reranks the top 30 with a cross-encoder, and hands the top 10 chunks to Claude with a task-specific prompt. Citations are then checked twice: for fabrication (does the cited page exist and match?) and for attribution (does the cited chunk actually support the claim?). See `README.md` for commands, the architecture diagram, and the design decisions.
 
 ## How it got here
 
-The project was developed in phases; the working plans for those phases used to live in this repo and have been consolidated into this summary. Deep detail survives in `HISTORY.md`, `EVAL_NOTES.md`, and `ABLATION_NOTES.md` / `ABLATION_WRITEUP.md`.
+The project was developed in phases; the working plans and detailed changelogs for those phases have been consolidated into this summary. The ablation study keeps its full written report in `ABLATION_WRITEUP.md`.
 
 1. **Foundation.** Parser (docling with PyMuPDF/OCR fallbacks), section-aware chunking, BGE-M3 embeddings, single-collection ChromaDB, BM25 + RRF hybrid retrieval, cross-encoder reranking, HyDE, project scoping, idempotent ingest.
 2. **Evaluation contract.** A 20-question easy regression set, then a 25-question hard set (10 held out from all tuning), evidence-only LLM judges with multi-run medians, retrieval metrics (recall/MRR/nDCG), citation validation, per-query tracing, and a regression gate against a frozen baseline.
 3. **Design review.** A 50-finding review; the top findings were fixed (gold-source resolution that raises instead of silently returning nothing, answer caching and per-question checkpointing so a session limit cannot destroy a run, output-naming discipline so a pilot can never be mistaken for a full run).
 4. **Three-arm ablation.** Hybrid RAG vs whole-corpus-in-context vs agentic file access, 25 questions × 3 judge runs, paired statistics. Honest headline: no quality gap is statistically separable at n=25 (MDE ≈ 30pp); the hybrid arm was slowest and never better; its two losses are architectural (a retrieval miss and a chunking-granularity citation ceiling). Full report: `ABLATION_WRITEUP.md`.
 5. **Judge hardening and freeze.** Every "carried-over critical error" turned out to be a judge false positive, not a system defect; the judge was fixed probe-first (planted defects must be caught before any fix ships), voting made span-aware and majority-based, and the baseline frozen: 24/25 EQUIVALENT, holdout 10/10 clean, regression gate green with zero warnings.
-6. **Deliverable composer.** `compose_capstone.py` generates the capstone deliverables and gates them on claim-level groundedness. The gate's honest verdict is recorded in `EVAL_NOTES.md`: the submitted plan fails a 5% threshold largely because its own financial projections are unsupportable by any corpus — a threshold-design finding, not a fabrication finding.
+6. **Deliverable composer.** `compose_capstone.py` generates the capstone deliverables and gates them on claim-level groundedness. The gate's honest verdict: the submitted plan fails a 5% threshold largely because its own financial projections are unsupportable by any corpus — a threshold-design finding, not a fabrication finding.
 
 ## Where it stands
 
-The pipeline is complete and frozen against its baseline; the remaining roadmap (promoting the attribution metric into the gate, splitting the groundedness gate by claim genre, demoting MRR/nDCG from answer-quality proxies) is tracked in `CLAUDE.md` § Roadmap.
+The pipeline is complete and frozen against its baseline. The remaining roadmap: promote the attribution metric into the regression gate once its run-to-run drift is measured, split the deliverable groundedness gate by claim genre (external facts vs the plan's own projections), and stop treating MRR/nDCG as answer-quality proxies — a measured case exists where both improved on the run that produced a critical error.
