@@ -67,6 +67,107 @@ python rag.py delete <source>
 
 `<source>` is the filename without extension. `--verbose` / `-v` enables DEBUG retrieval logging.
 
+## Use with a local model (Open WebUI)
+
+`tool_server.py` serves retrieval as an OpenAPI tool, so a model you run yourself
+(for example Qwen3.8-Flash-Next under Ollama, behind Open WebUI) can search
+documents that are too large to attach to a chat. The model calls
+`search_documents`, receives the top passages with `[source, page N]` headers, and
+writes the cited answer itself. No Claude call is involved.
+
+```
+python tool_server.py                                   # loopback only, no auth
+PDFRAG_SERVER_TOKEN=<token> python tool_server.py --host 0.0.0.0
+```
+
+- Two tools are exposed: `search_documents` (query, optional `project` /
+  `document` scope, `top_k`) and `list_documents`.
+- Listening on anything other than loopback requires `PDFRAG_SERVER_TOKEN`; the
+  server refuses to start without it. Clients send it as a bearer token.
+- HyDE is off on this path (it needs the Claude CLI), so retrieval is dense +
+  BM25 + rerank. The eval numbers in this README were measured with HyDE on and
+  do not cover this configuration.
+- Ingest stays a CLI step, and the server must be restarted after it: the running
+  process holds the vector index in memory.
+
+### Setup on an NVIDIA DGX Spark
+
+> Written on a Windows development machine and not yet run on a Spark. Treat the
+> first run as the test, especially the aarch64 installs of `docling` and `easyocr`.
+
+1. **Clone and install.** Install the CUDA build of torch first: on aarch64 a
+   plain `pip install torch` can give a CPU-only build.
+
+   ```
+   git clone https://github.com/curasinan/pdf-rag.git && cd pdf-rag
+   python3 -m venv .venv && source .venv/bin/activate
+   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+   pip install -r requirements.txt
+   python -c "import torch; print(torch.cuda.is_available())"    # must print True
+   ```
+
+   If the last command prints `False`, a later install replaced torch with a CPU
+   build; reinstall it from the `cu130` index.
+
+2. **Ingest on the Spark.** `git clone` brings code only — the vector store and
+   source documents are not in the repository. Copy the documents over, then:
+
+   ```
+   python batch_ingest.py ~/documents --project study
+   python rag.py list
+   ```
+
+3. **Check memory.** The Spark's memory is shared between the LLM and the
+   retrieval models (a few GB for BGE-M3, the reranker, and docling during
+   ingest). With a large model loaded, confirm headroom with `free -h`.
+
+4. **Start the server.**
+
+   ```
+   export PDFRAG_SERVER_TOKEN="$(openssl rand -hex 32)"
+   echo "$PDFRAG_SERVER_TOKEN"                                   # paste into Open WebUI in step 6
+   python tool_server.py --host 0.0.0.0
+   ```
+
+   Wait for `tool server ready: device=cuda:0, N chunks indexed`. A warning that
+   the models are on `cpu` means step 1's torch check was skipped. Run it under
+   `tmux` or `nohup` to keep it alive after logout.
+
+5. **Find the address Open WebUI can reach.** When Open WebUI runs in Docker,
+   `localhost` inside the container is the container, not the Spark. Use the
+   Spark's LAN address or the Docker bridge gateway, and confirm from inside the
+   container:
+
+   ```
+   hostname -I | awk '{print $1}'
+   docker network inspect bridge -f '{{(index .IPAM.Config 0).Gateway}}'
+   docker exec <open-webui-container> curl -s http://<address>:8765/health
+   ```
+
+   Expected: `{"status":"ok"}`. If it hangs, check the firewall (`sudo ufw status`).
+
+6. **Register the tool in Open WebUI — in the admin settings.** Settings → Admin
+   → Integrations, in the tool-server section (labelled *Tools* or *External Tool
+   Servers* depending on version), add a connection of type OpenAPI with URL
+   `http://<address>:8765` and bearer auth using the token from step 4. A server
+   added there is called by the Open WebUI backend. A server added under a
+   user's own settings is called by the *browser*, i.e. from your laptop, where
+   that address may not resolve. See the
+   [Open WebUI docs](https://docs.openwebui.com/features/extensibility/plugin/tools/openapi-servers/open-webui/).
+
+7. **Enable it in a chat.** In the message input, open Integrations → Tools and
+   switch the tool on. Keep Function Calling on Native (Chat Controls → Advanced
+   Params), which is the default; the model must support tool calling.
+
+8. **Check the context window.** A default search returns about 15K tokens.
+   Ollama can load a model with far less context than the model advertises, and
+   input beyond it is truncated silently rather than rejected — the model then
+   answers from passages it never fully saw. Check the loaded size with
+   `ollama ps` (CONTEXT column); if it is below about 32K, set `num_ctx` in the
+   model's advanced parameters in Open WebUI.
+
+After ingesting new documents, restart `tool_server.py`.
+
 ## Evaluation
 
 The pipeline ships with a full eval harness (`eval/`):
@@ -77,7 +178,7 @@ The pipeline ships with a full eval harness (`eval/`):
 - A three-arm ablation study (hybrid RAG vs whole-corpus context vs agentic file access) with paired statistics — see `ABLATION_WRITEUP.md`.
 
 ```
-python -m pytest tests/ -m "not slow"          # 74 fast smoke tests
+python -m pytest tests/ -m "not slow"          # 93 fast tests
 python eval/run.py --hard                      # full hard eval
 python eval/gate.py --current eval/results_hard.json --baseline eval/baseline.json
 ```
@@ -87,6 +188,7 @@ python eval/gate.py --current eval/results_hard.json --baseline eval/baseline.js
 | Area | Files |
 |---|---|
 | CLI + orchestration | `rag.py`, `pipeline.py`, `batch_ingest.py` |
+| Tool server (local models) | `tool_server.py` |
 | Parsing + chunking | `pdf_parser.py`, `config.py` |
 | Retrieval | `retrieval.py`, `embeddings.py`, `vectorstore.py`, `bm25.py`, `reranker.py`, `hyde.py` |
 | Generation | `claude_bridge.py`, `prompts.py` |
