@@ -170,3 +170,19 @@ CITATION_QUOTE_RARE_DF_FRACTION = 0.25   # a token is "rare" if df <= 25% of chu
 CITATION_SUPPORT_CACHE_DIR = str(DATA_DIR / "citation_support_cache")
 CITATION_SUPPORT_PROMPT_VERSION = 1      # bump on ANY prompt edit — it is part of the
                                          # cache key, so a stale verdict cannot replay
+
+# ── Tool server (Open WebUI / any OpenAPI tool client) ───────────────
+# tool_server.py exposes hybrid_search as a tool a locally served model calls.
+# Nothing on that path calls Claude.
+SERVE_HOST = "127.0.0.1"           # loopback by default; anything else needs a token
+SERVE_PORT = 8765
+SERVE_MAX_TOP_K = 20               # a model asking for more is clamped, not rejected
+SERVE_MAX_CONTEXT_CHARS = 80_000   # ~20K tokens. The default top-10 (10 x 6000-char
+                                   # chunks + headers) always fits; the cap only bites
+                                   # when top_k is raised. Over the cap, whole
+                                   # lowest-ranked passages are dropped.
+SERVE_USE_HYDE = False             # HyDE needs the Claude CLI, which the serving
+                                   # machine does not have. NOTE: the eval baseline was
+                                   # measured with USE_HYDE = True; retrieval quality
+                                   # with HyDE off is unmeasured.
+SERVE_TOKEN_ENV = "PDFRAG_SERVER_TOKEN"   # bearer token; required for a non-loopback bind
