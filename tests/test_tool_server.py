@@ -220,3 +220,58 @@ def test_openapi_exposes_exactly_two_tools(client):
     ops = {op["operationId"] for path in spec["paths"].values() for op in path.values()}
     assert ops == {"search_documents", "list_documents"}
     assert "/health" not in spec["paths"]
+
+
+# ── Entry point ─────────────────────────────────────────────────────
+
+
+def test_main_refuses_network_bind_without_token(monkeypatch, capsys):
+    """The guard runs before logging or model loading, so the refusal is instant
+    and names the variable to set."""
+    monkeypatch.delenv(tool_server.SERVE_TOKEN_ENV, raising=False)
+    monkeypatch.setattr(sys, "argv", ["tool_server.py", "--host", "0.0.0.0"])
+    with pytest.raises(SystemExit) as exc:
+        tool_server.main()
+    assert exc.value.code == 1
+    assert tool_server.SERVE_TOKEN_ENV in capsys.readouterr().err
+
+
+# ── Unstubbed round trip ────────────────────────────────────────────
+
+
+def test_real_corpus_round_trip():
+    """No stubs: the real store, real retrieval, and the project's own citation
+    parser reading the result. The tests above hand-build chunk dicts; this is
+    what proves that shape matches what the store actually returns.
+
+    Assumes the capstone corpus is ingested, like tests/test_smoke.py; skipped on
+    a machine where it is not."""
+    import re
+
+    from citations import parse_citations
+    from vectorstore import list_projects
+
+    if "capstone" not in list_projects():
+        pytest.skip("capstone corpus is not ingested on this machine")
+
+    real = TestClient(tool_server.create_app(token=None, warm=False))
+    listed = real.get("/list_documents", params={"project": "capstone"}).json()
+    docs = listed["projects"]["capstone"]
+    assert len(docs) >= 20
+
+    r = real.post("/search_documents", json={
+        "query": "coffee shop break-even", "project": "capstone", "top_k": 3})
+    assert r.status_code == 200
+    body = r.json()
+    assert body["chunks"] == 3 and body["truncated"] is False and body["message"] is None
+
+    lines = body["context"].splitlines()
+    headers = [ln for ln in lines if re.fullmatch(r"\[.+, pages? [\d, \-]+\]", ln)]
+    assert lines[0] == headers[0], "the context must open with a passage header"
+    assert len(headers) >= 3
+    for header in headers:
+        parsed = parse_citations(header)
+        assert len(parsed) == 1, f"header is not a citation the project parses: {header!r}"
+        assert parsed[0]["pages"], f"no pages parsed from {header!r}"
+        assert tool_server._resolve_name(parsed[0]["source"], docs) is not None, (
+            f"header names a source that is not an ingested document: {header!r}")

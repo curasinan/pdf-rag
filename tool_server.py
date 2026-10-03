@@ -19,6 +19,7 @@ Ingest stays a CLI step. This process holds the vector index in memory, so after
 ``rag.py ingest`` / ``batch_ingest.py`` the server must be restarted.
 """
 
+import argparse
 import hmac
 import logging
 import os
@@ -38,6 +39,7 @@ from config import (
     SERVE_HOST, SERVE_PORT, SERVE_TOKEN_ENV,
     SERVE_MAX_TOP_K, SERVE_MAX_CONTEXT_CHARS, SERVE_USE_HYDE,
 )
+from logging_setup import setup_logging
 from pipeline import _format_context
 from retrieval import hybrid_search
 from vectorstore import list_documents, list_projects
@@ -291,3 +293,42 @@ def create_app(token: str | None = None, warm: bool = True) -> FastAPI:
         )
 
     return app
+
+
+# ── Entry point ──────────────────────────────────────────────────────
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Serve hybrid retrieval as an OpenAPI tool (for Open WebUI)."
+    )
+    parser.add_argument(
+        "--host", default=SERVE_HOST,
+        help=f"Address to listen on (default: {SERVE_HOST}). Anything other than "
+             f"loopback requires {SERVE_TOKEN_ENV} to be set.",
+    )
+    parser.add_argument("--port", type=int, default=SERVE_PORT,
+                        help=f"Port to listen on (default: {SERVE_PORT}).")
+    parser.add_argument("-v", "--verbose", action="store_true",
+                        help="DEBUG-level logging.")
+    args = parser.parse_args()
+
+    token = os.environ.get(SERVE_TOKEN_ENV) or None
+    try:
+        check_bind(args.host, token)
+    except ValueError as e:
+        print(str(e), file=sys.stderr)
+        sys.exit(1)
+
+    setup_logging(verbose=args.verbose)
+    logger.info("starting tool server on %s:%d (auth: %s)",
+                args.host, args.port, "bearer token" if token else "none, loopback only")
+
+    import uvicorn
+    # log_config=None: keep the handlers setup_logging installed instead of
+    # letting uvicorn replace them.
+    uvicorn.run(create_app(token=token), host=args.host, port=args.port, log_config=None)
+
+
+if __name__ == "__main__":
+    main()
