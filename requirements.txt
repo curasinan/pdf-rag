@@ -17,3 +17,6 @@ anthropic>=0.40
 fastapi>=0.110
 uvicorn>=0.29
 httpx>=0.27
+
+# Test runner for tests/ (the README's pytest commands).
+pytest>=8.0
