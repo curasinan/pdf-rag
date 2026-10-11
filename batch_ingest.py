@@ -9,6 +9,9 @@ Behavior:
     - Walks the folder recursively
     - Ingests every .pdf, .docx, .xlsx via the normal pipeline.ingest()
     - Skips unsupported file types with a note
+    - Refuses to start when two files share a name without the extension
+      (e.g. a/plan.pdf and b/plan.docx): a document is stored under that name,
+      so the second would silently replace the first
     - On per-file failure, prints the error and continues with the rest
     - Prints a summary at the end
 """
@@ -51,6 +54,20 @@ def main():
 
     if not supported:
         print(f"No supported files found in {root}. Supported: {sorted(SUPPORTED_EXTS)}")
+        sys.exit(1)
+
+    by_name: dict[str, list[Path]] = {}
+    for p in supported:
+        by_name.setdefault(p.stem, []).append(p)
+    clashes = {name: paths for name, paths in by_name.items() if len(paths) > 1}
+    if clashes:
+        print("These files share a name. Each document is stored under its file name "
+              "without the extension, so one would overwrite the other. Rename or move "
+              "all but one of each group, then run again. Nothing was ingested.\n")
+        for name, paths in sorted(clashes.items()):
+            print(f"  {name}:")
+            for p in paths:
+                print(f"    {p.relative_to(root)}")
         sys.exit(1)
 
     print(f"Found {len(supported)} supported file(s), {len(skipped)} skipped. Project: '{args.project}'.\n")
