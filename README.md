@@ -70,14 +70,16 @@ python rag.py delete <source>
 ## Use with a local model (Open WebUI)
 
 `tool_server.py` serves retrieval as an OpenAPI tool, so a model you run yourself
-(for example Qwen3.8-Flash-Next under Ollama, behind Open WebUI) can search
-documents that are too large to attach to a chat. The model calls
+can search documents that are too large to attach to a chat. The model calls
 `search_documents`, receives the top passages with `[source, page N]` headers, and
-writes the cited answer itself. No Claude call is involved.
+writes the cited answer itself. No Claude call is involved. It works with any
+OpenAI-compatible model server that supports tool calling (vLLM, llama.cpp,
+Ollama) behind Open WebUI.
 
 ```
 python tool_server.py                                   # loopback only, no auth
 PDFRAG_SERVER_TOKEN=<token> python tool_server.py --host 0.0.0.0
+python tools/probe_local_model.py                       # model + tool server, no Open WebUI
 ```
 
 - Two tools are exposed: `search_documents` (query, optional `project` /
@@ -89,82 +91,133 @@ PDFRAG_SERVER_TOKEN=<token> python tool_server.py --host 0.0.0.0
   do not cover this configuration.
 - Ingest stays a CLI step, and the server must be restarted after it: the running
   process holds the vector index in memory.
+- `tools/probe_local_model.py` plays Open WebUI's part: it sends eval questions to
+  the model server with the tool server's tools, runs the model's tool calls, and
+  prints each call next to the expected answer. It flags any answer given without a
+  `search_documents` call. Use it to tell a model-side failure from an Open WebUI
+  configuration problem. Its questions are about the capstone corpus.
 
 ### Setup on an NVIDIA DGX Spark
 
-> Written on a Windows development machine and not yet run on a Spark. Treat the
-> first run as the test, especially the aarch64 installs of `docling` and `easyocr`.
+Verified on a DGX Spark (GB10, CUDA 13.0, aarch64, Ubuntu 24.04) with
+Qwen3.8-Flash-Next-NVFP4 served by vLLM and Open WebUI 0.11.4, both in Docker
+with host networking. Retrieval ran on the GPU. The probe's three questions all
+went through `search_documents` and got the right answer (one page was cited as a
+range, pages 7-8 for page 8), and the same kind of question asked in Open WebUI
+produced a `search_documents` call and the correct cited answer.
 
 1. **Clone and install.** Install the CUDA build of torch first: on aarch64 a
-   plain `pip install torch` can give a CPU-only build.
+   plain `pip install torch` can give a CPU-only build. The constraints file then
+   stops a later install from silently replacing it.
 
    ```
    git clone https://github.com/curasinan/pdf-rag.git && cd pdf-rag
-   python3 -m venv .venv && source .venv/bin/activate
+   python3 -m venv .venv && source .venv/bin/activate      # Ubuntu may need python3.12-venv
    pip install torch torchvision --index-url https://download.pytorch.org/whl/cu130
-   pip install -r requirements.txt
-   python -c "import torch; print(torch.cuda.is_available())"    # must print True
+   python -c "import torch; print(torch.cuda.is_available(), torch.cuda.get_device_capability())"
+   python -c "import torch, torchvision; print(f'torch=={torch.__version__}'); print(f'torchvision=={torchvision.__version__}')" > .venv/torch-pin.txt
+   pip install -r requirements.txt -c .venv/torch-pin.txt
    ```
 
-   If the last command prints `False`, a later install replaced torch with a CPU
-   build; reinstall it from the `cu130` index.
+   The check must print `True (12, 1)`.
 
-2. **Ingest on the Spark.** `git clone` brings code only — the vector store and
-   source documents are not in the repository. Copy the documents over, then:
+2. **Copy the documents.** `git clone` brings code only. Copy the document folders
+   into `sources/<project>` (gitignored), not a copy of the whole project: only
+   `.pdf`, `.docx` and `.xlsx` files are ingested, so a project copy pulls in
+   generated deliverables. From Windows PowerShell, with an SSH host alias `spark`:
 
    ```
-   python batch_ingest.py ~/documents --project study
-   python rag.py list
+   scp -r "C:\path\to\folder" spark:pdf-rag/sources/<project>
    ```
 
-3. **Check memory.** The Spark's memory is shared between the LLM and the
-   retrieval models (a few GB for BGE-M3, the reranker, and docling during
-   ingest). With a large model loaded, confirm headroom with `free -h`.
+   A folder copied from Windows can arrive without write permission on its
+   directories, which makes moving it fail with "Permission denied";
+   `find sources -type d ! -writable -exec chmod u+w {} +` fixes it.
 
-4. **Start the server.**
+3. **Ingest** (inside `tmux`, so a dropped SSH session does not stop it):
+
+   ```
+   python batch_ingest.py sources/<project> --project <project>
+   python rag.py projects
+   ```
+
+   `batch_ingest.py` refuses to start when two files share a name without the
+   extension (`plan.pdf` and `plan.docx`), since one would overwrite the other.
+
+4. **Check memory.** Memory is shared between the model and retrieval. Measured on
+   the Spark: vLLM held about 85 GiB, the tool server about 4.4 GiB, and 18 to 24 GiB
+   stayed available. If memory runs out, the kernel kills the largest process, which
+   is the model server. `nvidia-smi` reports total memory as "Not Supported" on the
+   Spark; use `free -h`, and `nvidia-smi --query-compute-apps=pid,process_name,used_memory --format=csv`
+   for per-process use.
+
+5. **Check the model server.** vLLM accepts tool calls only when started with
+   `--enable-auto-tool-choice` and a `--tool-call-parser`. For Qwen3.8-Flash-Next
+   the working flags were `--tool-call-parser qwen3_xml --reasoning-parser qwen3`.
+   See what a container was started with:
+
+   ```
+   docker inspect -f '{{json .Config.Cmd}}' <vllm-container>
+   ```
+
+   A default search returns about 15K tokens, so the context window must be at
+   least 32K. vLLM sets it with `--max-model-len` and rejects longer requests.
+   Ollama is different: it can load a model with less context than advertised and
+   truncates input silently, so check `ollama ps` (CONTEXT column) and set
+   `num_ctx` if it is below 32K.
+
+6. **Start the tool server.** Check how Open WebUI is networked:
+
+   ```
+   docker inspect -f '{{.HostConfig.NetworkMode}}' <open-webui-container>
+   ```
+
+   With `host`, the container shares the Spark's network, so keep the default
+   loopback bind and no token:
+
+   ```
+   python tool_server.py
+   ```
+
+   With a bridge network, `localhost` inside the container is the container, so
+   bind to the network with a token and use the Spark's LAN address or the bridge
+   gateway (`docker network inspect bridge -f '{{(index .IPAM.Config 0).Gateway}}'`):
 
    ```
    export PDFRAG_SERVER_TOKEN="$(openssl rand -hex 32)"
-   echo "$PDFRAG_SERVER_TOKEN"                                   # paste into Open WebUI in step 6
    python tool_server.py --host 0.0.0.0
    ```
 
-   Wait for `tool server ready: device=cuda:0, N chunks indexed`. A warning that
-   the models are on `cpu` means step 1's torch check was skipped. Run it under
-   `tmux` or `nohup` to keep it alive after logout.
+   Either way, wait for `tool server ready: device=cuda:0, N chunks indexed`, then
+   confirm the container reaches it:
+   `docker exec <open-webui-container> curl -s http://<address>:8765/health`
+   prints `{"status":"ok"}`.
 
-5. **Find the address Open WebUI can reach.** When Open WebUI runs in Docker,
-   `localhost` inside the container is the container, not the Spark. Use the
-   Spark's LAN address or the Docker bridge gateway, and confirm from inside the
-   container:
+7. **Test the model side.** `python tools/probe_local_model.py` should end with
+   `3/3 questions searched the documents.` If a question shows
+   `!! no search_documents call`, the problem is the model server, not Open WebUI.
 
-   ```
-   hostname -I | awk '{print $1}'
-   docker network inspect bridge -f '{{(index .IPAM.Config 0).Gateway}}'
-   docker exec <open-webui-container> curl -s http://<address>:8765/health
-   ```
-
-   Expected: `{"status":"ok"}`. If it hangs, check the firewall (`sudo ufw status`).
-
-6. **Register the tool in Open WebUI — in the admin settings.** Settings → Admin
-   → Integrations, in the tool-server section (labelled *Tools* or *External Tool
-   Servers* depending on version), add a connection of type OpenAPI with URL
-   `http://<address>:8765` and bearer auth using the token from step 4. A server
-   added there is called by the Open WebUI backend. A server added under a
-   user's own settings is called by the *browser*, i.e. from your laptop, where
-   that address may not resolve. See the
+8. **Register the tool server in Open WebUI, as admin.** Profile menu → Admin
+   Panel → Settings, then the tool server section (*External Tools*, *Tools* or
+   *Integrations* depending on version). Add a connection of type OpenAPI with URL
+   `http://127.0.0.1:8765` (or the address from step 6), path `openapi.json`, and
+   auth None (or bearer with the token). Saving makes the server log
+   `GET /openapi.json 200`; if that line does not appear, Open WebUI did not reach
+   the server. A server added under a user's own Settings is called by the
+   *browser*, where that address points at the user's own machine. See the
    [Open WebUI docs](https://docs.openwebui.com/features/extensibility/plugin/tools/openapi-servers/open-webui/).
 
-7. **Enable it in a chat.** In the message input, open Integrations → Tools and
-   switch the tool on. Keep Function Calling on Native (Chat Controls → Advanced
-   Params), which is the default; the model must support tool calling.
+9. **Enable it in a chat.** In Open WebUI 0.11.4 the tools are behind the icon to
+   the right of `+` in the message box (the `+` menu only attaches files). Native
+   function calling is the default since 0.10.0. Each question that uses the tool
+   adds a `POST /search_documents 200` line to the server log
+   (`grep uvicorn.access data/logs/rag.log`); an answer without one came from the
+   model's own knowledge, not the documents.
 
-8. **Check the context window.** A default search returns about 15K tokens.
-   Ollama can load a model with far less context than the model advertises, and
-   input beyond it is truncated silently rather than rejected — the model then
-   answers from passages it never fully saw. Check the loaded size with
-   `ollama ps` (CONTEXT column); if it is below about 32K, set `num_ctx` in the
-   model's advanced parameters in Open WebUI.
+Observed with Qwen3.8-Flash-Next: each answer took 40 to 65 seconds with reasoning
+on. Citations name chunk page ranges, so a fact on page 8 may be cited as pages 7-8,
+and the model sometimes adds small unsupported details (it once miscounted the
+ingested documents). Check the page before relying on it.
 
 After ingesting new documents, restart `tool_server.py`.
 
@@ -178,7 +231,7 @@ The pipeline ships with a full eval harness (`eval/`):
 - A three-arm ablation study (hybrid RAG vs whole-corpus context vs agentic file access) with paired statistics — see `ABLATION_WRITEUP.md`.
 
 ```
-python -m pytest tests/ -m "not slow"          # 93 fast tests
+python -m pytest tests/ -m "not slow"          # 95 fast tests
 python eval/run.py --hard                      # full hard eval
 python eval/gate.py --current eval/results_hard.json --baseline eval/baseline.json
 ```
@@ -188,7 +241,7 @@ python eval/gate.py --current eval/results_hard.json --baseline eval/baseline.js
 | Area | Files |
 |---|---|
 | CLI + orchestration | `rag.py`, `pipeline.py`, `batch_ingest.py` |
-| Tool server (local models) | `tool_server.py` |
+| Tool server (local models) | `tool_server.py`, `tools/probe_local_model.py` |
 | Parsing + chunking | `pdf_parser.py`, `config.py` |
 | Retrieval | `retrieval.py`, `embeddings.py`, `vectorstore.py`, `bm25.py`, `reranker.py`, `hyde.py` |
 | Generation | `claude_bridge.py`, `prompts.py` |
