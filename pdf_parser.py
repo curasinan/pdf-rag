@@ -21,7 +21,7 @@ falls back to paragraph boundaries when a section is too long.
 import hashlib
 import logging
 
-import fitz  # PyMuPDF
+import pymupdf
 from pathlib import Path
 from config import (
     CHUNK_SIZE_CHARS, CHUNK_OVERLAP_CHARS, MIN_CHUNK_CHARS,
@@ -86,7 +86,7 @@ def _extract_pdf_pages_pymupdf(pdf_path: str) -> list[dict]:
     on, OCR that single page via easyocr instead. The fallback is per-page so
     mixed PDFs (some text, some scanned) still get the cheap path where possible.
     """
-    doc = fitz.open(pdf_path)
+    doc = pymupdf.open(pdf_path)
     pages = []
     for i, page in enumerate(doc):
         text = (page.get_text() or "").strip()
