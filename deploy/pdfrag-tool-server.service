@@ -1,0 +1,34 @@
+# systemd user service for tool_server.py. Assumes the repository is at ~/pdf-rag
+# with its virtualenv in ~/pdf-rag/.venv.
+#
+# Install (no root needed except for enable-linger):
+#   mkdir -p ~/.config/systemd/user
+#   cp ~/pdf-rag/deploy/pdfrag-tool-server.service ~/.config/systemd/user/
+#   systemctl --user daemon-reload
+#   systemctl --user enable --now pdfrag-tool-server
+#   sudo loginctl enable-linger "$USER"     # start at boot, without a login
+#
+# After an ingest:  systemctl --user restart pdfrag-tool-server
+# Logs:             journalctl --user -u pdfrag-tool-server   (also data/logs/rag.log)
+
+[Unit]
+Description=PDF RAG tool server (document search for Open WebUI)
+
+[Service]
+WorkingDirectory=%h/pdf-rag
+# Loopback, no token: right when Open WebUI runs with host networking. For a
+# network bind, add --host 0.0.0.0 and Environment=PDFRAG_SERVER_TOKEN=... (in a
+# drop-in: systemctl --user edit pdfrag-tool-server).
+ExecStart=%h/pdf-rag/.venv/bin/python tool_server.py
+Environment=PYTHONUNBUFFERED=1
+# The embedding and reranker models are already in the Hugging Face cache; offline
+# mode keeps a boot without network from failing or stalling on a hub check.
+Environment=HF_HUB_OFFLINE=1
+Restart=on-failure
+RestartSec=10
+# If memory runs out, the kernel kills the process with the highest score. Make
+# that this server (back in seconds) rather than the model server (minutes).
+OOMScoreAdjust=500
+
+[Install]
+WantedBy=default.target

@@ -214,12 +214,30 @@ produced a `search_documents` call and the correct cited answer.
    (`grep uvicorn.access data/logs/rag.log`); an answer without one came from the
    model's own knowledge, not the documents.
 
+10. **Keep it running.** `deploy/pdfrag-tool-server.service` runs the server as a
+    systemd user service: it starts at boot, restarts on failure, and is the first
+    process the kernel kills if memory runs out (instead of the model server). Stop
+    any copy started by hand first (the port must be free), then:
+
+    ```
+    mkdir -p ~/.config/systemd/user
+    cp deploy/pdfrag-tool-server.service ~/.config/systemd/user/
+    systemctl --user daemon-reload
+    systemctl --user enable --now pdfrag-tool-server
+    sudo loginctl enable-linger "$USER"
+    ```
+
+    The unit assumes the repository is at `~/pdf-rag` and serves on loopback with
+    no token (step 6, host networking). It runs Hugging Face in offline mode, so
+    start the server by hand once first to download the models. Logs:
+    `journalctl --user -u pdfrag-tool-server`.
+
 Observed with Qwen3.8-Flash-Next: each answer took 40 to 65 seconds with reasoning
 on. Citations name chunk page ranges, so a fact on page 8 may be cited as pages 7-8,
 and the model sometimes adds small unsupported details (it once miscounted the
 ingested documents). Check the page before relying on it.
 
-After ingesting new documents, restart `tool_server.py`.
+After ingesting new documents, restart the server: `systemctl --user restart pdfrag-tool-server`, or stop and start it by hand.
 
 ## Evaluation
 
