@@ -3,8 +3,9 @@ __pycache__/
 *.pyc
 .pytest_cache/
 
-# Local Claude Code settings
-.claude/
+# Local Claude Code settings. Only the shared project settings file is tracked.
+.claude/*
+!.claude/settings.json
 
 # Runtime data: vector store, BM25 index, caches, traces, logs
 data/
